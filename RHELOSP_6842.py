@@ -53,4 +53,6 @@ if __name__ == "__main__":
     res = RHELOSP_6842_test()
     if res == 0:
         print("RHELOSP_6842_test Finished successfully")
+    else:
+        print("RHELOSP_6842_test failed")
     return res
