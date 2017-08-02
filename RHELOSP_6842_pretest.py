@@ -29,4 +29,5 @@ def RHELOSP_6842_pretest():
 if __name__ == "__main__":
     res = RHELOSP_6842_pretest()
     if res == 0:
-        print("Finished successfully")
+        print("RHELOSP_6842_pretest Finished successfully")
+    return res

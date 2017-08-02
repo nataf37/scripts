@@ -52,5 +52,5 @@ def RHELOSP_6842_test():
 if __name__ == "__main__":
     res = RHELOSP_6842_test()
     if res == 0:
-        print("Finished successfully")
+        print("RHELOSP_6842_test Finished successfully")
     return res
