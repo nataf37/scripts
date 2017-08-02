@@ -1,5 +1,5 @@
 from check_gnocchi_service import *
-
+import sys
 
 def RHELOSP_6842_test():
     res = 1
@@ -55,4 +55,4 @@ if __name__ == "__main__":
         print("RHELOSP_6842_test Finished successfully")
     else:
         print("RHELOSP_6842_test failed")
-    return res
+    sys.exit(res)

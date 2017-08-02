@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b053ac5-d213-422d-8c90-16d7cdc99ecf" name="Default" comment="">
+    <list default="true" id="7b053ac5-d213-422d-8c90-16d7cdc99ecf" name="Default" comment="Fix to 6842 - add name of finished">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RHELOSP_6842.py" afterPath="$PROJECT_DIR$/RHELOSP_6842.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RHELOSP_6842_pretest.py" afterPath="$PROJECT_DIR$/RHELOSP_6842_pretest.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,22 +28,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RHELOSP_6842.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RHELOSP_6842.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RHELOSP_6842.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="57" column="4" lean-forward="false" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="4" />
-              <folding />
+            <state relative-caret-position="748">
+              <caret line="57" column="4" lean-forward="false" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RHELOSP_6842_pretest.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RHELOSP_6842_pretest.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RHELOSP_6842_pretest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="36" lean-forward="false" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
-              <folding />
+            <state relative-caret-position="289">
+              <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+              <folding>
+                <element signature="e#0#35#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -62,16 +67,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
               <caret line="22" column="22" lean-forward="false" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RHELOSP_20607.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RHELOSP_20607.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -180,8 +175,9 @@
         <option value="$PROJECT_DIR$/RHELOSP_20232.py" />
         <option value="$PROJECT_DIR$/RHELOSP_20233.py" />
         <option value="$PROJECT_DIR$/check_gnocchi_service.py" />
-        <option value="$PROJECT_DIR$/RHELOSP_6842_pretest.py" />
+        <option value="$PROJECT_DIR$/test_file.py" />
         <option value="$PROJECT_DIR$/RHELOSP_6842.py" />
+        <option value="$PROJECT_DIR$/RHELOSP_6842_pretest.py" />
       </list>
     </option>
   </component>
@@ -336,7 +332,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501676094785</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Fix to 6842 - add name of finished">
+      <created>1501676237577</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1501676237577</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -620,19 +623,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RHELOSP_6842_pretest.py">
+    <entry file="file://$PROJECT_DIR$/test_file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="36" lean-forward="false" selection-start-line="31" selection-start-column="36" selection-end-line="31" selection-end-column="36" />
+        <state relative-caret-position="51">
+          <caret line="3" column="11" lean-forward="false" selection-start-line="3" selection-start-column="11" selection-end-line="3" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/RHELOSP_6842.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="57" column="4" lean-forward="false" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="4" />
-          <folding />
+        <state relative-caret-position="748">
+          <caret line="57" column="4" lean-forward="false" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RHELOSP_6842_pretest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="16" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

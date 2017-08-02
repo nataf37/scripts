@@ -1,5 +1,5 @@
 from check_gnocchi_service import *
-
+import sys
 
 def RHELOSP_6842_pretest():
     # Edit the pipeline file
@@ -30,4 +30,4 @@ if __name__ == "__main__":
     res = RHELOSP_6842_pretest()
     if res == 0:
         print("RHELOSP_6842_pretest Finished successfully")
-    return res
+    sys.exit(res)
