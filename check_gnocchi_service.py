@@ -150,7 +150,7 @@ def create_new_resource(resource_type, resource_name=""):
             else:
                 print("Volume is built!")
                 for line in output.splitlines():
-                    if " id" in line:
+                    if "id" in line and not "None" in line:
                         id_arr = line.split('|')
                         metric_id = id_arr[2][1:]
                         metric_id = metric_id[:metric_id.find(" ")]
