@@ -495,7 +495,6 @@ def edit_source(source_file, edit_fields):
         with open(source_file, 'r') as editfile:
             for line in editfile:
                 if edit_fields.split('\n')[5] in line:
-                    print
                     print("The gnocchi_resources file already contains the fields")
                     return 0
 

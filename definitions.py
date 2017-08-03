@@ -19,7 +19,7 @@ volume_value_check = ['volume.size']
 
 gnocchi_pipeline_input='''
     - name: hw_source
-      interval: 60
+      interval: "60"
       meters:
           - "hardware.cpu.load.1min"
           - "hardware.cpu.load.5min"
@@ -29,7 +29,7 @@ gnocchi_pipeline_input='''
 
 gnocchi_pipeline_instance_input = '''
     - name: cpu_source
-      interval: 60
+      interval: "60"
       meters:
           - "cpu"
       sinks:
@@ -39,7 +39,7 @@ gnocchi_pipeline_instance_input = '''
 
 gnocchi_pipeline_image_input = '''
     - name: image_source
-      interval: 60
+      interval: "60"
       meters:
           - 'image.size'
       sinks:
@@ -47,7 +47,7 @@ gnocchi_pipeline_image_input = '''
 
 gnocchi_pipeline_network_input = '''
     - name: image_source
-      interval: 300
+      interval: "300"
       meters:
           - "network*"
       sinks:
