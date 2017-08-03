@@ -469,10 +469,11 @@ def check_system_process(process_name):
 def edit_pipeline(pipeline_file, edit_fields):
     processing_source = False
     if os.path.isfile(pipeline_file):
-        for line in fileinput.input(pipeline_file, inplace=1):
-            if edit_fields[4] in line:
-                print("The pipeline file already contains the fields")
-                return 0
+        with open(pipeline_file, 'r') as pipefile:
+            for line in pipefile:
+                if edit_fields[4] in line:
+                    print("The pipeline file already contains the fields")
+                    return 0
 
     if os.path.isfile(pipeline_file):
         print("Trying to change %s"%pipeline_file)
@@ -491,10 +492,11 @@ def edit_pipeline(pipeline_file, edit_fields):
 def edit_source(source_file, edit_fields):
     processing_source = False
     if os.path.isfile(source_file):
-        for line in fileinput.input(source_file, inplace=1):
-            if edit_fields[1] in line:
-                print("The gnocchi_resources file already contains the fields")
-                return 0
+        with open(pipeline_file, 'r') as editfile:
+            for line in editfile:
+                if edit_fields[1] in line:
+                    print("The gnocchi_resources file already contains the fields")
+                    return 0
 
     if os.path.isfile(source_file):
         print("Trying to change %s"%source_file)
