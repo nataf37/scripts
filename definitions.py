@@ -55,7 +55,7 @@ gnocchi_pipeline_network_input = '''
 
 gnocchi_pipeline_volume_input = '''
    - name: image_source
-      interval: 300
+      interval: "300"
       meters:
           - "volume*"
       sinks:
