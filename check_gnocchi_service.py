@@ -471,7 +471,7 @@ def edit_pipeline(pipeline_file, edit_fields):
     if os.path.isfile(pipeline_file):
         with open(pipeline_file, 'r') as pipefile:
             for line in pipefile:
-                if edit_fields[4] in line:
+                if edit_fields.split('\n')[4] in line:
                     print("The pipeline file already contains the fields")
                     return 0
 
@@ -494,7 +494,8 @@ def edit_source(source_file, edit_fields):
     if os.path.isfile(source_file):
         with open(source_file, 'r') as editfile:
             for line in editfile:
-                if edit_fields[1] in line:
+                if edit_fields.split('\n')[5] in line:
+                    print
                     print("The gnocchi_resources file already contains the fields")
                     return 0
 
