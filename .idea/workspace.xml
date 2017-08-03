@@ -18,8 +18,8 @@
       <file leaf-file-name="check_gnocchi_service.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/check_gnocchi_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="611">
-              <caret line="495" column="33" lean-forward="true" selection-start-line="495" selection-start-column="33" selection-end-line="495" selection-end-column="33" />
+            <state relative-caret-position="679">
+              <caret line="502" column="47" lean-forward="false" selection-start-line="502" selection-start-column="47" selection-end-line="502" selection-end-column="47" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -379,7 +379,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501750996310</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="bugfix in pretest">
+      <created>1501751325052</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1501751325052</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -425,7 +432,8 @@
     <MESSAGE value="sys.exit" />
     <MESSAGE value="a small test" />
     <MESSAGE value="Change in editing pipeline and gnocchi_resources" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change in editing pipeline and gnocchi_resources" />
+    <MESSAGE value="bugfix in pretest" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugfix in pretest" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -779,8 +787,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/check_gnocchi_service.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="611">
-          <caret line="495" column="33" lean-forward="true" selection-start-line="495" selection-start-column="33" selection-end-line="495" selection-end-column="33" />
+        <state relative-caret-position="679">
+          <caret line="502" column="47" lean-forward="false" selection-start-line="502" selection-start-column="47" selection-end-line="502" selection-end-column="47" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
