@@ -4,6 +4,7 @@ import subprocess
 import time
 import fileinput
 from definitions import *
+import sys
 
 
 def create_new_resource(resource_type, resource_name=""):

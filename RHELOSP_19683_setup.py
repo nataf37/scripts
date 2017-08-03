@@ -23,4 +23,7 @@ def RHELOSP_19683_setup():
 if __name__ == "__main__":
     res = RHELOSP_19683_setup()
     if res == 0:
-        print("Finished successfully")
+        print("RHELOSP_19683 Finished successfully")
+    else:
+        print("RHELOSP_19683 failed")
+    sys.exit(res)

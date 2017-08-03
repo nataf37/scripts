@@ -50,4 +50,7 @@ def RHELOSP_6843_test():
 if __name__ == "__main__":
     res = RHELOSP_6843_test()
     if res == 0:
-        print("Finished successfully")
+        print("RHELOSP_6843 Finished successfully")
+    else:
+        print("RHELOSP_6843 failed")
+    sys.exit(res)

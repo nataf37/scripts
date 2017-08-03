@@ -52,4 +52,7 @@ def RHELOSP_6835_test():
 if __name__ == "__main__":
     res = RHELOSP_6835_test()
     if res == 0:
-        print("Finished successfully")
+        print("RHELOSP_6835 Finished successfully")
+    else:
+        print("RHELOSP_6835 failed")
+    sys.exit(res)

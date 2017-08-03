@@ -22,4 +22,7 @@ def RHELOSP_6844_pretest():
 if __name__ == "__main__":
     res = RHELOSP_6844_pretest()
     if res == 0:
-        print("Finished successfully")
+        print("RHELOSP_6844_pretest Finished successfully")
+    else:
+        print("RHELOSP_6844_pretest failed")
+    sys.exit(res)

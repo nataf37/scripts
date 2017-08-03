@@ -1,5 +1,4 @@
 from check_gnocchi_service import *
-import sys
 
 def RHELOSP_6842_test():
     res = 1
