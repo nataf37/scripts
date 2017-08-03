@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b053ac5-d213-422d-8c90-16d7cdc99ecf" name="Default" comment="">
+    <list default="true" id="7b053ac5-d213-422d-8c90-16d7cdc99ecf" name="Default" comment="Change">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check_gnocchi_service.py" afterPath="$PROJECT_DIR$/check_gnocchi_service.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/definitions.py" afterPath="$PROJECT_DIR$/definitions.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,8 +19,8 @@
       <file leaf-file-name="check_gnocchi_service.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/check_gnocchi_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2584">
-              <caret line="152" column="58" lean-forward="false" selection-start-line="152" selection-start-column="58" selection-end-line="152" selection-end-column="58" />
+            <state relative-caret-position="594">
+              <caret line="494" column="28" lean-forward="false" selection-start-line="494" selection-start-column="28" selection-end-line="494" selection-end-column="28" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -38,11 +40,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RHELOSP_6842_pretest.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="definitions.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/definitions.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="764">
+              <caret line="61" column="22" lean-forward="false" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RHELOSP_6842_pretest.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RHELOSP_6842_pretest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+            <state relative-caret-position="85">
+              <caret line="5" column="68" lean-forward="false" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="68" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -50,21 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="small_test.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="small_test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/small_test.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RHELOSP_20604.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RHELOSP_20604.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -147,6 +149,8 @@
       <find>heck that</find>
       <find>Resource id</find>
       <find>check_sys</find>
+      <find>pipeline</find>
+      <find>gnocchi_pipeline_volume_input</find>
     </findStrings>
     <replaceStrings>
       <replace>return 1,''</replace>
@@ -177,16 +181,16 @@
         <option value="$PROJECT_DIR$/RHELOSP_19683_setup.py" />
         <option value="$PROJECT_DIR$/RHELOSP_7043.py" />
         <option value="$PROJECT_DIR$/RHELOSP_7044.py" />
-        <option value="$PROJECT_DIR$/definitions.py" />
         <option value="$PROJECT_DIR$/RHELOSP_19869.py" />
         <option value="$PROJECT_DIR$/RHELOSP_20231.py" />
         <option value="$PROJECT_DIR$/RHELOSP_20232.py" />
         <option value="$PROJECT_DIR$/RHELOSP_20233.py" />
-        <option value="$PROJECT_DIR$/check_gnocchi_service.py" />
         <option value="$PROJECT_DIR$/test_file.py" />
         <option value="$PROJECT_DIR$/RHELOSP_6842.py" />
         <option value="$PROJECT_DIR$/RHELOSP_6842_pretest.py" />
         <option value="$PROJECT_DIR$/small_test.py" />
+        <option value="$PROJECT_DIR$/check_gnocchi_service.py" />
+        <option value="$PROJECT_DIR$/definitions.py" />
       </list>
     </option>
   </component>
@@ -362,17 +366,25 @@
       <option name="project" value="LOCAL" />
       <updated>1501686228785</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="a small test">
+      <created>1501686293023</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1501686293023</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="28" width="1922" height="1019" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289183" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -520,6 +532,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2567">
           <caret line="151" column="24" lean-forward="false" selection-start-line="151" selection-start-column="24" selection-end-line="151" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -665,13 +678,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/definitions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2567">
-          <caret line="151" column="24" lean-forward="false" selection-start-line="151" selection-start-column="24" selection-end-line="151" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RHELOSP_20607.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -727,16 +733,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/check_gnocchi_service.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2584">
-          <caret line="152" column="58" lean-forward="false" selection-start-line="152" selection-start-column="58" selection-end-line="152" selection-end-column="58" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_file.py" />
     <entry file="file://$PROJECT_DIR$/RHELOSP_6842.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -748,21 +744,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RHELOSP_6842_pretest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/small_test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="1" lean-forward="false" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/check_gnocchi_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="494" column="28" lean-forward="false" selection-start-line="494" selection-start-column="28" selection-end-line="494" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/definitions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="764">
+          <caret line="61" column="22" lean-forward="false" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RHELOSP_6842_pretest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="68" lean-forward="false" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="68" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

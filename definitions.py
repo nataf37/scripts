@@ -45,23 +45,21 @@ gnocchi_pipeline_image_input = '''
       sinks:
           - meter_sink'''
 
-gnocchi_pipeline_network_input = """
+gnocchi_pipeline_network_input = '''
     - name: image_source
       interval: 300
       meters:
           - "network*"
       sinks:
-          - meter_sink
-"""
+          - meter_sink'''
 
-gnocchi_pipeline_volume_input = """
+gnocchi_pipeline_volume_input = '''
    - name: image_source
       interval: 300
       meters:
           - "volume*"
       sinks:
-          - meter_sink
-​​"""
+          - meter_sink'''
 
 gnocchi_resources_instance_input = """
  - resource_type: instance
