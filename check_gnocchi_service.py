@@ -250,6 +250,7 @@ def ceilometer_event_show():
                 print(line)
                 if event_name in line:
                     id_arr = line.split('|')
+                    print id_arr
                     metric_id = id_arr[0].strip()
                     print("Resource id is %s"%metric_id)
 
