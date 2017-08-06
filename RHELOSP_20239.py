@@ -4,7 +4,7 @@ def RHELOSP_20239_test():
     out = 1
 
     out = ceilometer_event_show()
-    if out != 0:
+    if out[0] != 0:
         print("Event not shown in the list!")
         return 1
     return out

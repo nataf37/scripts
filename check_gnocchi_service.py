@@ -229,6 +229,7 @@ def ceilometer_event_list():
             for line in output.splitlines():
                 print(line)
                 if event_name in line:
+                    print 'Event %s found!'%event_name
                     return 0, ''
             print("Didn't find %s in the list"%event_name)
             return 1,''
