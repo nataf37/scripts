@@ -7,7 +7,7 @@ def RHELOSP_20231_test():
     if out != 0:
         print("No panko user found!")
         return 1
-    return out
+    return 0
 
 if __name__ == "__main__":
     res = RHELOSP_20231_test()

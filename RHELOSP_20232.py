@@ -8,7 +8,7 @@ def RHELOSP_20232_test():
         print("Panko service is not running!")
         return 1
 
-    return out
+    return 0
 
 if __name__ == "__main__":
     res = RHELOSP_20232_test()

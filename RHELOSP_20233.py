@@ -8,7 +8,7 @@ def RHELOSP_20233_test():
         print("Panko endpoint is not found!")
         return 1
 
-    return out
+    return 0
 
 if __name__ == "__main__":
     res = RHELOSP_20233_test()

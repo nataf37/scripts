@@ -7,7 +7,7 @@ def RHELOSP_20241_test():
     if out != 0:
         print("Event not found in the list!")
         return 1
-    return out
+    return 0
 
 if __name__ == "__main__":
     res = RHELOSP_20241_test()
