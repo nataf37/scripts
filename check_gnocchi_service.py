@@ -216,6 +216,69 @@ def resource_exists(resource_type, resource_name):
     print("There was a problem with list",err)
     return 1, ''
 
+def ceilometer_event_list():
+    print("ceilometer event-list")
+    event_name ="identity.domain.created"
+    p = subprocess.Popen("ceilometer event-list",stdout=subprocess.PIPE, shell=True)
+    (output, err) = p.communicate()
+    if err is None:
+        if "Missing value" in output:
+            print("Missing value auth-url required for auth plugin password")
+            return 1,''
+        else:
+            for line in output.splitlines():
+                print(line)
+                if event_name in line:
+                    return 0, ''
+            print("Didn't find %s in the list"%event_name)
+            return 1,''
+    print("There was a problem with list",err)
+    return 1, ''
+
+def ceilometer_event_show():
+    print("ceilometer event-list")
+    event_name ="identity.domain.created"
+    p = subprocess.Popen("ceilometer event-list",stdout=subprocess.PIPE, shell=True)
+    (output, err) = p.communicate()
+    if err is None:
+        if "Missing value" in output:
+            print("Missing value auth-url required for auth plugin password")
+            return 1,''
+        else:
+            for line in output.splitlines():
+                print(line)
+                if event_name in line:
+                    id_arr = line.split('|')
+                    metric_id = id_arr[0][1:]
+                    metric_id = metric_id[:metric_id.find(" ")]
+                    print("Resource id is %s"%metric_id)
+
+                    print("ceilometer event-show %s"%metric_id)
+                    p = subprocess.Popen("ceilometer event-show %s"%metric_id, stdout=subprocess.PIPE, shell=True)
+                    (output1, err1) = p.communicate()
+                    if err1 is None:
+                        if "Missing value" in output1:
+                            print("Missing value auth-url required for auth plugin password")
+                            return 1, ''
+                        else:
+                            for line1 in output1.splitlines():
+                                print(line1)
+                                if event_name in line1:
+                                    id_arr1 = line1.split('|')
+                                    ev_type = id_arr1[0][1:]
+                                    if "event_type" in ev_type:
+                                        print('Event %s exists'%event_name)
+                                        return 0, ''
+                            print("Didn't find event_type %s "%event_name)
+                            return 1, ''
+                    else:
+                        print("Problem with event-show")
+                        return 1, ''
+            print("Didn't find %s in the list"%event_name)
+            return 1,''
+    print("There was a problem with list",err)
+    return 1, ''
+
 def test_new_resource(resource_name, resource_id):
     if resource_name == "network":
         resource_name = 'instance_network_interface'

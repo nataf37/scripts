@@ -31,4 +31,7 @@ def RHELOSP_20604_test():
 if __name__ == "__main__":
     res = RHELOSP_20604_test()
     if res == 0:
-        print("Finished successfully")
+        print("RHELOSP_20604 Finished successfully")
+    else:
+        print("RHELOSP_20604 failed")
+    sys.exit(res)

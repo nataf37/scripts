@@ -32,4 +32,7 @@ def RHELOSP_20607_test():
 if __name__ == "__main__":
     res = RHELOSP_20607_test()
     if res == 0:
-        print("Finished successfully")
+        print("RHELOSP_20607 Finished successfully")
+    else:
+        print("RHELOSP_20607 failed")
+    sys.exit(res)
