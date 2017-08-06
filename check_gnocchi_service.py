@@ -250,8 +250,7 @@ def ceilometer_event_show():
                 print(line)
                 if event_name in line:
                     id_arr = line.split('|')
-                    metric_id = id_arr[0][1:]
-                    metric_id = metric_id[:metric_id.find(" ")]
+                    metric_id = id_arr[0].strip()
                     print("Resource id is %s"%metric_id)
 
                     print("ceilometer event-show %s"%metric_id)
@@ -266,7 +265,7 @@ def ceilometer_event_show():
                                 print(line1)
                                 if event_name in line1:
                                     id_arr1 = line1.split('|')
-                                    ev_type = id_arr1[0][1:]
+                                    ev_type = id_arr1[0].strip()
                                     if "event_type" in ev_type:
                                         print('Event %s exists'%event_name)
                                         return 0, ''
