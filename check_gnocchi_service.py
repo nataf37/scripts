@@ -299,6 +299,28 @@ def check_openstack_event_type_list():
     print("There was a problem with type list",err)
     return 1, ''
 
+def check_openstack_trait_list():
+    event_name = "volume.create.start"
+    print("ceilometer trait-description-list -e %s"%event_name)
+    trait_name = "created_at"
+    p = subprocess.Popen("ceilometer trait-description-list -e %s"%event_name,stdout=subprocess.PIPE, shell=True)
+    (output, err) = p.communicate()
+    if err is None:
+        if "Missing value" in output:
+            print("Missing value auth-url required for auth plugin password")
+            return 1,''
+        else:
+            for line in output.splitlines():
+                print(line)
+                if trait_name in line:
+                    print 'Trait type %s found in %s!'%(trait_name,event_name)
+                    return 0, ''
+            print("Didn't find %s in the list"%event_name)
+            return 1,''
+    print("There was a problem with trait list",err)
+    return 1, ''
+
+
 def test_new_resource(resource_name, resource_id):
     if resource_name == "network":
         resource_name = 'instance_network_interface'
