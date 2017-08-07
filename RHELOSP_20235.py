@@ -4,7 +4,7 @@ def RHELOSP_20235_test():
     out = 1
 
     out = check_openstack_event_type_list()
-    if out != 0:
+    if out[0] != 0:
         print("Ceilometer event type list is not found!")
         return 1
 
