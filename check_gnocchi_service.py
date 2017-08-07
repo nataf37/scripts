@@ -250,7 +250,6 @@ def ceilometer_event_show():
                 print(line)
                 if event_name in line:
                     id_arr = line.split('|')
-                    print id_arr
                     metric_id = id_arr[1].strip()
                     print("Resource id is %s"%metric_id)
 
@@ -278,6 +277,26 @@ def ceilometer_event_show():
             print("Didn't find %s in the list"%event_name)
             return 1,''
     print("There was a problem with list",err)
+    return 1, ''
+
+def check_openstack_event_type_list():
+    print("ceilometer event-type-list")
+    event_name ="image.update"
+    p = subprocess.Popen("ceilometer event-type-list",stdout=subprocess.PIPE, shell=True)
+    (output, err) = p.communicate()
+    if err is None:
+        if "Missing value" in output:
+            print("Missing value auth-url required for auth plugin password")
+            return 1,''
+        else:
+            for line in output.splitlines():
+                print(line)
+                if event_name in line:
+                    print 'Event type %s found!'%event_name
+                    return 0, ''
+            print("Didn't find %s in the list"%event_name)
+            return 1,''
+    print("There was a problem with type list",err)
     return 1, ''
 
 def test_new_resource(resource_name, resource_id):
