@@ -13,6 +13,7 @@ gnocchi_resources_input = '''
       - 'hardware.cpu.load.15min'
       '''
 instance_values_assigned = ['hardware.cpu.load.1min','hardware.cpu.load.5min','hardware.cpu.load.15min']
+image_value_check = ['image.size']
 instance_value_check = ['vcpus']
 network_value_check=['network.create']
 volume_value_check = ['volume.size']
@@ -38,7 +39,7 @@ gnocchi_pipeline_instance_input = '''
 gnocchi_pipeline_image_input = '''
     - name: image_source
       meters:
-          - 'image.size'
+          - 'image*'
       sinks:
           - meter_sink'''
 
