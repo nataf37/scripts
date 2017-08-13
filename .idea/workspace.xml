@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b053ac5-d213-422d-8c90-16d7cdc99ecf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RHELOSP_6841.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/definitions.py" afterPath="$PROJECT_DIR$/definitions.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check_gnocchi_service.py" afterPath="$PROJECT_DIR$/check_gnocchi_service.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -16,11 +15,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="check_gnocchi_service.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="check_gnocchi_service.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/check_gnocchi_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4505">
-              <caret line="319" column="41" lean-forward="false" selection-start-line="319" selection-start-column="41" selection-end-line="319" selection-end-column="41" />
+            <state relative-caret-position="-2686">
+              <caret line="430" column="51" lean-forward="false" selection-start-line="430" selection-start-column="51" selection-end-line="430" selection-end-column="51" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -48,7 +47,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RHELOSP_6841.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RHELOSP_6841.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RHELOSP_6841.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="340">
@@ -192,9 +191,9 @@
         <option value="$PROJECT_DIR$/RHELOSP_20241.py" />
         <option value="$PROJECT_DIR$/RHELOSP_20235.py" />
         <option value="$PROJECT_DIR$/RHELOSP_20236.py" />
-        <option value="$PROJECT_DIR$/check_gnocchi_service.py" />
         <option value="$PROJECT_DIR$/RHELOSP_6841.py" />
         <option value="$PROJECT_DIR$/definitions.py" />
+        <option value="$PROJECT_DIR$/check_gnocchi_service.py" />
       </list>
     </option>
   </component>
@@ -496,7 +495,14 @@
       <option name="project" value="LOCAL" />
       <updated>1502102953186</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Added 6841">
+      <created>1502283526847</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1502283526847</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -558,7 +564,8 @@
     <MESSAGE value="Added 20235" />
     <MESSAGE value="20235 bugfix" />
     <MESSAGE value="Added 20236" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added 20236" />
+    <MESSAGE value="Added 6841" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added 6841" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -932,21 +939,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/check_gnocchi_service.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4505">
-          <caret line="319" column="41" lean-forward="false" selection-start-line="319" selection-start-column="41" selection-end-line="319" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RHELOSP_6841.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="40" lean-forward="true" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/check_gnocchi_service.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2686">
+          <caret line="430" column="51" lean-forward="false" selection-start-line="430" selection-start-column="51" selection-end-line="430" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

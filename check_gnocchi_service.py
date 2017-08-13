@@ -37,8 +37,7 @@ def create_new_resource(resource_type, resource_name=""):
                         for line in output.splitlines():
                             if "id" in line:
                                 id_arr = line.split('|')
-                                metric_id = id_arr[2][1:-1]
-                                metric_id = metric_id[:metric_id.find(" ")]
+                                metric_id = id_arr[2].strip()
                                 return 0, metric_id
                         print("Couldn't find instance id")
                         return 1,''
@@ -90,8 +89,7 @@ def create_new_resource(resource_type, resource_name=""):
                     for line in output.splitlines():
                         if "id" in line:
                             id_arr = line.split('|')
-                            metric_id = id_arr[2][1:-1]
-                            metric_id = metric_id[:metric_id.find(" ")]
+                            metric_id = id_arr[2].strip()
                             print("Here is the id: ", metric_id)
                             return 0, metric_id
                     return 1,''
@@ -121,8 +119,7 @@ def create_new_resource(resource_type, resource_name=""):
                 for line in output.splitlines():
                     if "id" in line:
                         id_arr = line.split('|')
-                        metric_id = id_arr[2][1:-1]
-                        metric_id = metric_id[:metric_id.find(" ")]
+                        metric_id = id_arr[2].strip()
                         print("Resource id is %s"%metric_id)
                         return 0, metric_id
                 print("Error building flavor")
@@ -153,8 +150,7 @@ def create_new_resource(resource_type, resource_name=""):
                 for line in output.splitlines():
                     if "id" in line and not "None" in line:
                         id_arr = line.split('|')
-                        metric_id = id_arr[2][1:]
-                        metric_id = metric_id[:metric_id.find(" ")]
+                        metric_id = id_arr[2].strip()
                         print("Resource id is %s" % metric_id)
                         return 0, metric_id
                 else:
@@ -181,8 +177,7 @@ def create_new_resource(resource_type, resource_name=""):
                 for line in output.splitlines():
                     if "id" in line:
                         id_arr = line.split('|')
-                        metric_id = id_arr[2][1:-1]
-                        metric_id = metric_id[:metric_id.find(" ")]
+                        metric_id = id_arr[2].strip()
                         print("Resource id is %s" % metric_id)
                         return 0, metric_id
                 else:
@@ -193,6 +188,27 @@ def create_new_resource(resource_type, resource_name=""):
     else:
         print("Not known resource %s" % resource_type)
         return 1,''
+
+def alarm_type_exists(alarm_type):
+    print("ceilometer help")
+    p = subprocess.Popen("ceilometer help", stdout=subprocess.PIPE, shell=True)
+    (output, err) = p.communicate()
+    if err is None:
+        if "Missing value" in output:
+            print("Missing value auth-url required for auth plugin password")
+            return 1, ''
+        else:
+            for line in output.splitlines():
+                print(line)
+                if alarm_type in line:
+                    id_arr = line.split('|')
+                    metric_id = id_arr[1].strip()
+                    print("Resource id is %s" % metric_id)
+                    return 0, metric_id
+            print("Didn't find resource in the list")
+            return 1, ''
+    print("There was a problem with list", err)
+    return 1, ''
 
 def resource_exists(resource_type, resource_name):
     print("openstack %s list"%resource_type)
@@ -207,8 +223,7 @@ def resource_exists(resource_type, resource_name):
                 print(line)
                 if resource_name in line:
                     id_arr = line.split('|')
-                    metric_id = id_arr[1][1:]
-                    metric_id = metric_id[:metric_id.find(" ")]
+                    metric_id = id_arr[1].strip()
                     print("Resource id is %s"%metric_id)
                     return 0, metric_id
             print("Didn't find resource in the list")
@@ -335,8 +350,7 @@ def test_new_resource(resource_name, resource_id):
                 print(line)
                 if resource_name in line:
                     id_arr = line.split('|')
-                    metric_id = id_arr[1][1:]
-                    metric_id = metric_id[:metric_id.find(" ")]
+                    metric_id = id_arr[1].strip()
                     if resource_id == metric_id:
                         print("The resource %s is in metric list" % resource_name)
                         return 0
@@ -388,7 +402,7 @@ def find_resources(resource_name):
             for line in output.splitlines():
                 if resource_name in line:
                     id_arr = line.split('|')
-                    metric_id = id_arr[1][1:-1]
+                    metric_id = id_arr[1].strip()
                     resource_list.append(metric_id)
     return resource_list
 
@@ -414,8 +428,7 @@ def show_resource(resource_type, resource_id):
                 if look_for_name in line:
                     #print("Display line: %s"%line)
                     id_arr = line.split('|')
-                    metric_name = id_arr[2][1:-1]
-                    metric_name = metric_name[:metric_name.find(" ")]
+                    metric_name = id_arr[2].strip()
     return metric_name
 
 
