@@ -430,6 +430,11 @@ def check_aodh_alarm_list(extracted_alarm):
 
     p = subprocess.Popen("aodh alarm create --name '%s' -t %s"%(alarm_name, alarm_type),stdout=subprocess.PIPE, shell=True)
     (output, err) = p.communicate()
+    print 'output:'
+    print output
+    print 'err:'
+    print err
+    '''
     if err is None:
         if "Missing value" in output:
             print("Missing value auth-url required for auth plugin password")
@@ -453,6 +458,7 @@ def check_aodh_alarm_list(extracted_alarm):
     else:
         print("There was a problem with aodh list",err)
         return 1, ''
+    '''
 
 def show_resource(resource_type, resource_id):
     metric_name = ""
