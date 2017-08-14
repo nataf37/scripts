@@ -18,8 +18,8 @@
       <file leaf-file-name="check_gnocchi_service.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/check_gnocchi_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="706">
-              <caret line="441" column="20" lean-forward="false" selection-start-line="441" selection-start-column="20" selection-end-line="441" selection-end-column="20" />
+            <state relative-caret-position="604">
+              <caret line="435" column="17" lean-forward="false" selection-start-line="435" selection-start-column="17" selection-end-line="435" selection-end-column="17" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -518,7 +518,14 @@
       <option name="project" value="LOCAL" />
       <updated>1502696149726</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="bugfix">
+      <created>1502696347184</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1502696347184</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -573,7 +580,6 @@
     <MESSAGE value="Added sys.exit with res" />
     <MESSAGE value="Added sys.exit to the rest of the tests, added ceilometer list and show to the functions" />
     <MESSAGE value="Fixed output in 20238 and 20239" />
-    <MESSAGE value="bugfix" />
     <MESSAGE value="ceilometer event show fix" />
     <MESSAGE value="test" />
     <MESSAGE value="fix" />
@@ -583,7 +589,8 @@
     <MESSAGE value="Added 6841" />
     <MESSAGE value="Added strip()" />
     <MESSAGE value="Added test 25031" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added test 25031" />
+    <MESSAGE value="bugfix" />
+    <option name="LAST_COMMIT_MESSAGE" value="bugfix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -970,8 +977,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/check_gnocchi_service.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="706">
-          <caret line="441" column="20" lean-forward="false" selection-start-line="441" selection-start-column="20" selection-end-line="441" selection-end-column="20" />
+        <state relative-caret-position="604">
+          <caret line="435" column="17" lean-forward="false" selection-start-line="435" selection-start-column="17" selection-end-line="435" selection-end-column="17" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
