@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7b053ac5-d213-422d-8c90-16d7cdc99ecf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check_gnocchi_service.py" afterPath="$PROJECT_DIR$/check_gnocchi_service.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,7 +18,7 @@
         <entry file="file://$PROJECT_DIR$/check_gnocchi_service.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="689">
-              <caret line="449" column="20" lean-forward="false" selection-start-line="449" selection-start-column="20" selection-end-line="449" selection-end-column="20" />
+              <caret line="449" column="0" lean-forward="false" selection-start-line="449" selection-start-column="0" selection-end-line="449" selection-end-column="0" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -546,7 +545,14 @@
       <option name="project" value="LOCAL" />
       <updated>1502696936612</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="more bugfix">
+      <created>1502697113489</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1502697113489</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1000,7 +1006,7 @@
     <entry file="file://$PROJECT_DIR$/check_gnocchi_service.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="689">
-          <caret line="449" column="20" lean-forward="false" selection-start-line="449" selection-start-column="20" selection-end-line="449" selection-end-column="20" />
+          <caret line="449" column="0" lean-forward="false" selection-start-line="449" selection-start-column="0" selection-end-line="449" selection-end-column="0" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
