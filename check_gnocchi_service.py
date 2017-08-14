@@ -430,10 +430,6 @@ def check_aodh_alarm_list(extracted_alarm):
 
     p = subprocess.Popen("aodh alarm create --name '%s' -t %s"%(alarm_name, alarm_type),stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
     (output, err) = p.communicate()
-    print 'output:'
-    print output
-    print 'err:'
-    print err
 
     if err is None:
         if "Missing value" in output:
@@ -450,7 +446,7 @@ def check_aodh_alarm_list(extracted_alarm):
                     print line
                     res1 = check_aodh_alarm(line)
                     if res1:
-                        print("The aodh list os full, %s is not in it", extracted_alarm)
+                        print("The aodh list os full, %s is not in it"%extracted_alarm)
                         return 0, ''
 
             print "Didn't find the list"
