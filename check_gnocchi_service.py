@@ -406,6 +406,41 @@ def find_resources(resource_name):
                     resource_list.append(metric_id)
     return resource_list
 
+def check_aodh_alarm_list(extracted_alarm):
+    alarm_name="MyAlarm"
+    alarm_type="test"
+    counter = 0
+    max_counter = len(aodh_alarm_list)
+    print("aodh alarm create --name '%s' -t %s"%(alarm_name, alarm_type))
+
+    p = subprocess.Popen("aodh alarm create --name '%s' -t %s"%(alarm_name, alarm_type),stdout=subprocess.PIPE, shell=True)
+    (output, err) = p.communicate()
+    if err is None:
+        if "Missing value" in output:
+            print("Missing value auth-url required for auth plugin password")
+            return 1,''
+        else:
+            for line in output.splitlines():
+                print(line)
+                if extracted_alarm in line:
+                    print 'This alarm: %s is not supposed to be in the list!'%extracted_alarm
+                    return 1, ''
+
+                if aodh_alarm_list[0] in line:
+                    for aodh_line in aodh_alarm_list:
+                        if aodh_line in line:
+                            counter=counter+1
+                        else:
+                            print line
+                            print("Didn't find %s in the list" % aodh_line)
+                            return 1, ''
+                    print("The list of aodh_alarms is %s" %aodh_alarm_list)
+                    if counter == max_counter:
+                        print("The aodh list os full, %s is not in it", extracted_alarm)
+                        return 0, ''
+
+    print("There was a problem with aodh list",err)
+    return 1, ''
 
 def show_resource(resource_type, resource_id):
     metric_name = ""
@@ -566,23 +601,6 @@ def check_system_process(process_name):
                         flag = True
                         i = 0
     return 2
-
-
-'''def edit_pipeline(pipeline_file, edit_fields):
-    if os.path.isfile(pipeline_file):
-        with open(pipeline_file, 'r+a') as target:
-            print("Opening file %s"%pipeline_file)
-            for line in target.readline():
-                print(line)
-                if "sources" in line:
-                    l = target.readline()
-                    print(l)
-                    target.write(edit_fields)
-                    return 0
-    else:
-        print("Cannot open %s" % pipeline_file)
-    return 1
-'''
 
 
 def edit_pipeline(pipeline_file, edit_fields):

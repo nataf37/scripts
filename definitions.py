@@ -18,6 +18,15 @@ instance_value_check = ['vcpus']
 network_value_check=['network.create']
 volume_value_check = ['volume.size']
 
+aodh_alarm_list = ['threshold',
+                   'event',
+                   'composite',
+                   'gnocchi_resources_threshold',
+                   'gnocchi_aggregation_by_metrics_threshold',
+                   'gnocchi_aggregation_by_resources_threshold']
+
+alarm_out = 'combination'
+
 gnocchi_pipeline_input='''
     - name: hw_source
       meters:
