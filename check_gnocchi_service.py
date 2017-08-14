@@ -455,6 +455,89 @@ def check_aodh_alarm_list(extracted_alarm):
         print("There was a problem with aodh list",err)
         return 1, ''
 
+def create_aodh_alarm(alarm_type, threshold, metrics):
+#    aodh alarm create --name 'MyAlarm' -t 'gnocchi_aggregation_by_metrics_threshold' --aggregation-method 'min' --metrics disk.usage --threshold 4.0
+    print("aodh alarm create \
+    --name 'MyAlarm_%s' \
+    --type %s \
+    --aggregation-method 'min' \
+    --metrics %s \
+    --threshold %f"%(alarm_type, alarm_type, metrics, threshold))
+
+    p = subprocess.Popen("aodh alarm create \
+    --name 'MyAlarm_%s' \
+    --type '%s' \
+    --aggregation-method 'min' \
+    --metrics %s \
+    --threshold %f"%(alarm_type, alarm_type, metrics, threshold) \
+    ,stdout=subprocess.PIPE, shell=True)
+
+    (output, err) = p.communicate()
+
+    if err is None:
+        if "Missing value" in output:
+            print("Missing value auth-url required for auth plugin password")
+            return 1,''
+        else:
+            for line in output.splitlines():
+                print(line)
+                if 'alarm_id' in line:
+                    id_arr = line.split('|')
+                    metric_id = id_arr[2].strip()
+                    print 'Alarm user id is %s!'%metric_id
+                    return 0, metric_id
+            print "Didn't find user_id in the alarm description"
+            return 1,''
+    print "There was a problem with alarm creation: %"%err
+    return 1, ''
+
+def create_aodh_composition_alarm(id1, id2):
+
+    print "aodh alarm create \
+    --type combination \
+    --name 'AClient-Combination-1' \
+    --description 'AodhClient-Combination-Alarm' \
+    --severity moderate \
+    --enabled True \
+    --alarm-action 'log://' \
+    --ok-action 'log://' \
+    --insufficient-data-action 'log://' \
+    --repeat-actions True \
+    --operator or \
+    --alarm_ids %s \
+    --alarm_ids %s"%(id1, id2)
+
+    p = subprocess.Popen("aodh alarm create \
+    --type combination \
+    --name 'AClient-Combination-1' \
+    --description 'AodhClient-Combination-Alarm' \
+    --severity moderate \
+    --enabled True \
+    --alarm-action 'log://' \
+    --ok-action 'log://' \
+    --insufficient-data-action 'log://' \
+    --repeat-actions True \
+    --operator or \
+    --alarm_ids %s \
+    --alarm_ids %s"%(id1, id2) \
+    ,stdout=subprocess.PIPE, stderr = subprocess.STDOUT, shell=True)
+
+    (output, err) = p.communicate()
+
+    if err is None:
+        if "Missing value" in output:
+            print("Missing value auth-url required for auth plugin password")
+            return 1,''
+        else:
+            for line in output.splitlines():
+                print(line)
+                if 'invalid choice' in line:
+                    print 'Combination alarm in not in the list!'
+                    return 0
+            print "Wrong error type, check it please"
+            return 1
+    print "There was a problem with aodh command: %"%err
+    return 1
 
 def show_resource(resource_type, resource_id):
     metric_name = ""
