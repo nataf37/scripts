@@ -441,13 +441,13 @@ def check_aodh_alarm_list(extracted_alarm):
                     print 'This alarm: %s is not supposed to be in the list!'%extracted_alarm
                     return 1, ''
 
-                if aodh_alarm_list[0] in line:
+                if 'invalid choice' in line:
                     print line
                     res1 = check_aodh_alarm(line)
+                    if res1:
+                        print("The aodh list os full, %s is not in it", extracted_alarm)
+                        return 0, ''
 
-                if res1:
-                    print("The aodh list os full, %s is not in it", extracted_alarm)
-                    return 0, ''
             print "Didn't find the list"
             return 1, ''
     else:
