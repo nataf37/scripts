@@ -408,15 +408,18 @@ def find_resources(resource_name):
 
 def check_aodh_alarm(outline):
     counter = 0
+    print 'Enter aodh_list'
     max_counter = len(aodh_alarm_list)
     for aodh_line in aodh_alarm_list:
         if aodh_line in outline:
+            print "Found %s"%aodh_line
             counter = counter + 1
         else:
             print outline
             print("Didn't find %s in the list" % aodh_line)
             return False
     if counter == max_counter:
+        print "The list is full"
         return True
 
 def check_aodh_alarm_list(extracted_alarm):
