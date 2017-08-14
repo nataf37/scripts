@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b053ac5-d213-422d-8c90-16d7cdc99ecf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RHELOSP_25031.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check_gnocchi_service.py" afterPath="$PROJECT_DIR$/check_gnocchi_service.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/definitions.py" afterPath="$PROJECT_DIR$/definitions.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,8 +18,8 @@
       <file leaf-file-name="check_gnocchi_service.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/check_gnocchi_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="689">
-              <caret line="440" column="20" lean-forward="false" selection-start-line="440" selection-start-column="20" selection-end-line="440" selection-end-column="20" />
+            <state relative-caret-position="706">
+              <caret line="441" column="20" lean-forward="false" selection-start-line="441" selection-start-column="20" selection-end-line="441" selection-end-column="20" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -513,7 +511,14 @@
       <option name="project" value="LOCAL" />
       <updated>1502631239717</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Added test 25031">
+      <created>1502696149726</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1502696149726</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -577,7 +582,8 @@
     <MESSAGE value="Added 20236" />
     <MESSAGE value="Added 6841" />
     <MESSAGE value="Added strip()" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added strip()" />
+    <MESSAGE value="Added test 25031" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added test 25031" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -964,8 +970,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/check_gnocchi_service.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="689">
-          <caret line="440" column="20" lean-forward="false" selection-start-line="440" selection-start-column="20" selection-end-line="440" selection-end-column="20" />
+        <state relative-caret-position="706">
+          <caret line="441" column="20" lean-forward="false" selection-start-line="441" selection-start-column="20" selection-end-line="441" selection-end-column="20" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>

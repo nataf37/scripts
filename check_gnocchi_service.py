@@ -438,9 +438,11 @@ def check_aodh_alarm_list(extracted_alarm):
                     if counter == max_counter:
                         print("The aodh list os full, %s is not in it", extracted_alarm)
                         return 0, ''
-
-    print("There was a problem with aodh list",err)
-    return 1, ''
+        print line
+        return 1, ''
+    else:
+        print("There was a problem with aodh list",err)
+        return 1, ''
 
 def show_resource(resource_type, resource_id):
     metric_name = ""
