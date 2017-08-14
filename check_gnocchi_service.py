@@ -428,7 +428,7 @@ def check_aodh_alarm_list(extracted_alarm):
     res1=False
     print("aodh alarm create --name '%s' -t %s"%(alarm_name, alarm_type))
 
-    p = subprocess.Popen("aodh alarm create --name '%s' -t %s"%(alarm_name, alarm_type),stdout=subprocess.PIPE, shell=True)
+    p = subprocess.Popen("aodh alarm create --name '%s' -t %s"%(alarm_name, alarm_type),stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
     (output, err) = p.communicate()
     print 'output:'
     print output
