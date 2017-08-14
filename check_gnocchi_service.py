@@ -445,7 +445,7 @@ def check_aodh_alarm_list(extracted_alarm):
                 if res1:
                     print("The aodh list os full, %s is not in it", extracted_alarm)
                     return 0, ''
-            print line
+            print "Didn't find the list"
             return 1, ''
     else:
         print("There was a problem with aodh list",err)
