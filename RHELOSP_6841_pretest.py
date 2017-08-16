@@ -1,14 +1,14 @@
 from check_gnocchi_service import *
 import sys
 
-def RHELOSP_6842_pretest():
+def RHELOSP_6841_pretest():
     # Edit the pipeline file
-    res = edit_pipeline(pipeline_file, gnocchi_pipeline_volume_input)
+    res = edit_pipeline(pipeline_file, gnocchi_pipeline_image_input)
     if res != 0:
         return 1
 
     # edit the gnocchi_source file
-    res = edit_source(gnocchi_resources_file, gnocchi_resources_volume_input)
+    res = edit_source(gnocchi_resources_file, gnocchi_resources_image_input)
     if res != 0:
         return 1
 
@@ -27,9 +27,9 @@ def RHELOSP_6842_pretest():
     return 0
 
 if __name__ == "__main__":
-    res = RHELOSP_6842_pretest()
+    res = RHELOSP_6841_pretest()
     if res == 0:
-        print("RHELOSP_6842_pretest Finished successfully")
+        print("RHELOSP_6841_pretest Finished successfully")
     else:
-        print("RHELOSP_6842_pretest failed")
+        print("RHELOSP_6841_pretest failed")
     sys.exit(res)
