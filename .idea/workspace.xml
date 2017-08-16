@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7b053ac5-d213-422d-8c90-16d7cdc99ecf" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/RHELOSP_25032.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RHELOSP_7043.py" afterPath="$PROJECT_DIR$/RHELOSP_7043.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check_gnocchi_service.py" afterPath="$PROJECT_DIR$/check_gnocchi_service.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,11 +16,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="check_gnocchi_service.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="check_gnocchi_service.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/check_gnocchi_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="458" column="149" lean-forward="false" selection-start-line="458" selection-start-column="149" selection-end-line="458" selection-end-column="149" />
+            <state relative-caret-position="334">
+              <caret line="92" column="49" lean-forward="false" selection-start-line="92" selection-start-column="35" selection-end-line="92" selection-end-column="49" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -28,61 +28,61 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RHELOSP_25032.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/RHELOSP_25032.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="57" lean-forward="false" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RHELOSP_25031.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RHELOSP_25031.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RHELOSP_20614.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RHELOSP_20614.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="28" lean-forward="false" selection-start-line="26" selection-start-column="28" selection-end-line="26" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RHELOSP_20607.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RHELOSP_20607.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="36" column="28" lean-forward="false" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="RHELOSP_6842.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RHELOSP_6842.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="56" column="17" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="56" selection-end-column="17" />
+            <state relative-caret-position="153">
+              <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RHELOSP_6841.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RHELOSP_6841.py">
+      <file leaf-file-name="RHELOSP_6835_pretest.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RHELOSP_6835_pretest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="40" lean-forward="true" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+            <state relative-caret-position="544">
+              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="34" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RHELOSP_6843_pretest.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RHELOSP_6843_pretest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="29" column="36" lean-forward="false" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RHELOSP_6844_pretest.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RHELOSP_6844_pretest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="26" column="35" lean-forward="false" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RHELOSP_7043_pretest.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RHELOSP_7043_pretest.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="595">
+              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="37" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RHELOSP_7043.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RHELOSP_7043.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="493">
+              <caret line="50" column="62" lean-forward="false" selection-start-line="50" selection-start-column="62" selection-end-line="50" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -91,8 +91,8 @@
       <file leaf-file-name="definitions.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/definitions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="24" column="60" lean-forward="false" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="60" />
+            <state relative-caret-position="748">
+              <caret line="68" column="32" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -108,11 +108,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RHELOSP_20236.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/RHELOSP_20236.py">
+      <file leaf-file-name="RHELOSP_6842_pretest.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RHELOSP_6842_pretest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="17" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="17" />
+            <state relative-caret-position="544">
+              <caret line="33" column="27" lean-forward="false" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -150,6 +150,7 @@
       <find>check_ope</find>
       <find>strip</find>
       <find>id_arr</find>
+      <find>Here is the id</find>
     </findStrings>
     <replaceStrings>
       <replace>return 1,''</replace>
@@ -176,7 +177,6 @@
         <option value="$PROJECT_DIR$/RHELOSP_6843_pretest.py" />
         <option value="$PROJECT_DIR$/RHELOSP_6844.py" />
         <option value="$PROJECT_DIR$/RHELOSP_6844_pretest.py" />
-        <option value="$PROJECT_DIR$/RHELOSP_7043.py" />
         <option value="$PROJECT_DIR$/RHELOSP_7043_pretest.py" />
         <option value="$PROJECT_DIR$/RHELOSP_7044.py" />
         <option value="$PROJECT_DIR$/RHELOSP_7044_pretest.py" />
@@ -197,8 +197,9 @@
         <option value="$PROJECT_DIR$/RHELOSP_6841.py" />
         <option value="$PROJECT_DIR$/RHELOSP_25031.py" />
         <option value="$PROJECT_DIR$/definitions.py" />
-        <option value="$PROJECT_DIR$/check_gnocchi_service.py" />
         <option value="$PROJECT_DIR$/RHELOSP_25032.py" />
+        <option value="$PROJECT_DIR$/RHELOSP_7043.py" />
+        <option value="$PROJECT_DIR$/check_gnocchi_service.py" />
       </list>
     </option>
   </component>
@@ -206,7 +207,7 @@
     <option name="x" value="-1" />
     <option name="y" value="28" />
     <option name="width" value="1922" />
-    <option name="height" value="1019" />
+    <option name="height" value="1053" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -598,11 +599,18 @@
       <option name="project" value="LOCAL" />
       <updated>1502698027918</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="Added 25032">
+      <created>1502713987590</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1502713987590</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="28" width="1922" height="1019" extended-state="6" />
+    <frame x="-1" y="28" width="1922" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -639,7 +647,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="sys.exit" />
     <MESSAGE value="a small test" />
     <MESSAGE value="Change in editing pipeline and gnocchi_resources" />
     <MESSAGE value="bugfix in pretest" />
@@ -664,7 +671,8 @@
     <MESSAGE value="more bugfix" />
     <MESSAGE value="debugging" />
     <MESSAGE value="debugging-final" />
-    <option name="LAST_COMMIT_MESSAGE" value="debugging-final" />
+    <MESSAGE value="Added 25032" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added 25032" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -820,41 +828,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RHELOSP_6835_pretest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="34" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RHELOSP_6842_pretest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" column="27" lean-forward="false" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RHELOSP_6843_pretest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="36" lean-forward="false" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RHELOSP_6844_pretest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="35" lean-forward="false" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RHELOSP_7043_pretest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="37" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RHELOSP_7044.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -880,13 +853,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="24" column="29" lean-forward="false" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RHELOSP_7043.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="67" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -962,42 +928,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RHELOSP_6835.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="57" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RHELOSP_6843.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
           <caret line="52" column="28" lean-forward="false" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RHELOSP_6844.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="48" column="28" lean-forward="false" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RHELOSP_6842.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="56" column="17" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="56" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RHELOSP_6841.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="40" lean-forward="true" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -1034,29 +968,109 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/RHELOSP_25032.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="57" lean-forward="false" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RHELOSP_6835.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="57" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RHELOSP_6841.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="40" lean-forward="true" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RHELOSP_6842_pretest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="33" column="27" lean-forward="false" selection-start-line="33" selection-start-column="27" selection-end-line="33" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RHELOSP_6842.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="21" column="26" lean-forward="true" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RHELOSP_6835_pretest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="34" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RHELOSP_6843_pretest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="29" column="36" lean-forward="false" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RHELOSP_6844.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="48" column="28" lean-forward="false" selection-start-line="48" selection-start-column="28" selection-end-line="48" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/definitions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="24" column="60" lean-forward="false" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="60" />
+        <state relative-caret-position="748">
+          <caret line="68" column="32" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RHELOSP_6844_pretest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="35" lean-forward="false" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RHELOSP_7043_pretest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="37" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RHELOSP_7043.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="50" column="62" lean-forward="false" selection-start-line="50" selection-start-column="62" selection-end-line="50" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/check_gnocchi_service.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="458" column="149" lean-forward="false" selection-start-line="458" selection-start-column="149" selection-end-line="458" selection-end-column="149" />
+        <state relative-caret-position="334">
+          <caret line="92" column="49" lean-forward="false" selection-start-line="92" selection-start-column="35" selection-end-line="92" selection-end-column="49" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/RHELOSP_25032.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="57" lean-forward="false" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
-          <folding />
         </state>
       </provider>
     </entry>

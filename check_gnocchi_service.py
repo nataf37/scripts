@@ -90,7 +90,7 @@ def create_new_resource(resource_type, resource_name=""):
                         if "id" in line:
                             id_arr = line.split('|')
                             metric_id = id_arr[2].strip()
-                            print("Here is the id: ", metric_id)
+                            print "Here is the id: %s"%metric_id
                             return 0, metric_id
                     return 1,''
             else:
