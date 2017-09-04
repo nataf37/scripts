@@ -48,7 +48,7 @@ def RHELOSP_7043_test():
     print('Waiting for instance to update in metric. Need to wait for 1 hour')
     for i in xrange(60):
         time.sleep(60)
-        print('Waiting for update from nova. %d minutes passed'%i)
+        print('Waiting for update from nova. %d minutes passed.'%i)
 
 
     #Check the new name
