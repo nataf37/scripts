@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7b053ac5-d213-422d-8c90-16d7cdc99ecf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RHELOSP_7043.py" afterPath="$PROJECT_DIR$/RHELOSP_7043.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -60,8 +59,8 @@
       <file leaf-file-name="RHELOSP_7043.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/RHELOSP_7043.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="587">
-              <caret line="50" column="67" lean-forward="true" selection-start-line="50" selection-start-column="67" selection-end-line="50" selection-end-column="67" />
+            <state relative-caret-position="757">
+              <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -648,7 +647,14 @@
       <option name="project" value="LOCAL" />
       <updated>1504518030888</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="7043 fix">
+      <created>1504518137719</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1504518137719</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -689,7 +695,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="bugfix in pretest" />
     <MESSAGE value="one more bugfix in pretest" />
     <MESSAGE value="one+ more bugfix in pretest" />
     <MESSAGE value="Changed volume info in pipeline" />
@@ -714,7 +719,8 @@
     <MESSAGE value="Added 25032" />
     <MESSAGE value="minor bugfixes" />
     <MESSAGE value="Added 6841 pretest" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added 6841 pretest" />
+    <MESSAGE value="7043 fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="7043 fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1091,8 +1097,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RHELOSP_7043.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
-          <caret line="50" column="67" lean-forward="true" selection-start-line="50" selection-start-column="67" selection-end-line="50" selection-end-column="67" />
+        <state relative-caret-position="757">
+          <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
           <folding />
         </state>
       </provider>
