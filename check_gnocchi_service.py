@@ -772,7 +772,7 @@ def disable_non_metric_meters(value):
             if "disable_non_metric_meters" not in i:
                 f.write(i)
             else:
-                f.write("disable_non_metric_meters=%s" % value)
+                f.write("disable_non_metric_meters=%s\n" % value)
                 res = 0
         f.truncate()
         f.close()
