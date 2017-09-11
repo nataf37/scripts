@@ -406,6 +406,25 @@ def find_resources(resource_name):
                     resource_list.append(metric_id)
     return resource_list
 
+def list_resources():
+    resource_list = []
+    print "openstack metric resource list"
+    p = subprocess.Popen("openstack metric resource list", stdout=subprocess.PIPE, shell=True)
+    (output, err) = p.communicate()
+    if err is None:
+        if "Missing value" in output:
+            print("Missing value auth-url required for auth plugin password")
+            return 1,''
+        else:
+            if len(output.splitlines())> 4:
+                for line in output.splitlines():
+                    print line
+                return 0
+            else:
+                print "Problem with openstack metric resource list"
+                return 1
+
+
 def check_aodh_alarm(outline):
     counter = 0
     print 'Enter aodh_list'
