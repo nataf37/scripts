@@ -13,6 +13,7 @@ gnocchi_resources_input = '''
       - 'hardware.cpu.load.15min'
       '''
 instance_values_assigned = ['hardware.cpu.load.1min','hardware.cpu.load.5min','hardware.cpu.load.15min']
+instance_values_assigned_new = ['cpu','vcpus','disk.root.size']
 image_value_check = ['image.size']
 instance_value_check = ['vcpus']
 network_value_check=['network.create']

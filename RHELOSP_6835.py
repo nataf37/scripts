@@ -42,7 +42,7 @@ def RHELOSP_6835_test():
         return 1
 
     #Check the measures of the resource
-    for val in instance_values_assigned:
+    for val in instance_values_assigned_new:
         res = test_values_assigned(resource_id,val)
         if res != 0:
             return 1
