@@ -624,6 +624,15 @@ def check_process(process_name):
         print("No %s in the list" % process_name)
         return 1
 
+def check_docker_process(process_name):
+    output = subprocess.check_output('sudo docker ps | grep %s'% process_name,  stdout=subprocess.PIPE, shell=True)
+    if process_name in output:
+        print("%s is up an running!" % process_name)
+        return 0
+    else:
+        print("No %s in the list" % process_name)
+        return 1
+
 def check_httpd_process(process_name):
     p = subprocess.Popen("systemctl status httpd", stdout=subprocess.PIPE, shell=True)
     (output, err) = p.communicate()

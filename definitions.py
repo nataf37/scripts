@@ -28,6 +28,11 @@ aodh_alarm_list = ['threshold',
 
 alarm_out = 'combination'
 
+aodh_process_list = ['aodh-listener','aodh-api','aodh-notifier','aodh-evaluator']
+panko_process_list = ['panko-api']
+gnocchi_process_list =  ['gnocchi-api', 'gnocchi-statsd', 'gnocchi-metricd']
+ceilometer_process_list = ['ceilometer-notification','ceilometer-central']
+
 gnocchi_pipeline_input='''
     - name: hw_source
       meters:
