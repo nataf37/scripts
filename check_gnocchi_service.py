@@ -475,14 +475,15 @@ def check_aodh_alarm_list(extracted_alarm):
         return 1, ''
 
 def create_aodh_alarm(alarm_type, threshold, metrics):
-#    aodh alarm create --name 'MyAlarm' -t 'gnocchi_aggregation_by_metrics_threshold' --aggregation-method 'min' --metrics disk.usage --threshold 4.0
+#    aodh alarm create --name 'MyAlarm' -t 'gnocchi_aggregation_by_metrics_threshold' --aggregation-method 'min' --metric disk.usage --threshold 4.0
     print("aodh alarm create \
     --name 'MyAlarm_%s' \
     --type %s \
     --aggregation-method 'min' \
     --threshold %f \
     --resource-type metric \
-    --query '{'=': {'name': '%s'}}'"%(alarm_type, alarm_type, threshold, metrics))
+    --metric %s \
+    --query '{'=': {'name': '%s'}}'"%(alarm_type, alarm_type, threshold, metrics, metrics))
 
     p = subprocess.Popen("aodh alarm create \
     --name 'MyAlarm_%s' \
@@ -490,7 +491,8 @@ def create_aodh_alarm(alarm_type, threshold, metrics):
     --aggregation-method 'min' \
     --threshold %f \
     --resource-type metric \
-    --query '{'=': {'name': '%s'}}'"%(alarm_type, alarm_type, threshold, metrics) \
+    --metric %s \
+    --query '{'=': {'name': '%s'}}'"%(alarm_type, alarm_type, threshold, metrics, metrics) \
     ,stdout=subprocess.PIPE, shell=True)
 
     (output, err) = p.communicate()

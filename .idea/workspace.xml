@@ -18,8 +18,8 @@
       <file leaf-file-name="check_gnocchi_service.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/check_gnocchi_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="569">
-              <caret line="492" column="80" lean-forward="false" selection-start-line="492" selection-start-column="80" selection-end-line="492" selection-end-column="80" />
+            <state relative-caret-position="314">
+              <caret line="477" column="121" lean-forward="false" selection-start-line="477" selection-start-column="121" selection-end-line="477" selection-end-column="121" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -365,13 +365,6 @@
       <option name="presentableId" value="Default" />
       <updated>1493805393090</updated>
     </task>
-    <task id="LOCAL-00004" summary="sys.exit">
-      <created>1501676857476</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1501676857476</updated>
-    </task>
     <task id="LOCAL-00005" summary="a small test">
       <created>1501686228785</created>
       <option name="number" value="00005" />
@@ -708,7 +701,14 @@
       <option name="project" value="LOCAL" />
       <updated>1511088270999</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Fix in 25034">
+      <created>1511097334623</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1511097334623</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TodoView">
@@ -758,7 +758,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added sys.exit with res" />
     <MESSAGE value="Added sys.exit to the rest of the tests, added ceilometer list and show to the functions" />
     <MESSAGE value="Fixed output in 20238 and 20239" />
     <MESSAGE value="ceilometer event show fix" />
@@ -783,7 +782,8 @@
     <MESSAGE value="New testss for containerized services" />
     <MESSAGE value="Fix for process check" />
     <MESSAGE value="Another small fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="Another small fix" />
+    <MESSAGE value="Fix in 25034" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix in 25034" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1166,8 +1166,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/check_gnocchi_service.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="492" column="80" lean-forward="false" selection-start-line="492" selection-start-column="80" selection-end-line="492" selection-end-column="80" />
+        <state relative-caret-position="314">
+          <caret line="477" column="121" lean-forward="false" selection-start-line="477" selection-start-column="121" selection-end-line="477" selection-end-column="121" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
