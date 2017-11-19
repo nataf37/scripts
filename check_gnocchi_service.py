@@ -630,7 +630,7 @@ def check_docker_process(process_name):
     if err is None:
         for line in output.splitlines():
             if process_name in line:
-                print("%s is up an running!" % process_name)
+                print(line)
                 return 0
             else:
                 print("No %s in the list" % process_name)
