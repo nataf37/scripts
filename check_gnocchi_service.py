@@ -482,7 +482,7 @@ def create_aodh_alarm(alarm_type, threshold, metrics):
     --aggregation-method 'min' \
     --threshold %f \
     --resource-type metric \
-    --metric %s \
+    --metrics %s \
     --query '{'=': {'name': '%s'}}'"%(alarm_type, alarm_type, threshold, metrics, metrics))
 
     p = subprocess.Popen("aodh alarm create \
@@ -491,7 +491,7 @@ def create_aodh_alarm(alarm_type, threshold, metrics):
     --aggregation-method 'min' \
     --threshold %f \
     --resource-type metric \
-    --metric %s \
+    --metrics %s \
     --query '{'=': {'name': '%s'}}'"%(alarm_type, alarm_type, threshold, metrics, metrics) \
     ,stdout=subprocess.PIPE, shell=True)
 

@@ -3,6 +3,9 @@ image_source = "http://ikook.tlv.redhat.com/gen_images/centos/CentOS-7-x86_64-Ge
 image_name = "CentOS-7-x86_64-GenericCloud-1509.qcow2"
 pipeline_file = "/etc/ceilometer/pipeline.yaml"
 gnocchi_resources_file = "/etc/ceilometer/gnocchi_resources.yaml"
+docker_file = "docker exec -ti"
+docker_compute = "ceilometer_agent_compute"
+docker_gnocchi="gnocchi_api"
 ceilometer_conf =  "/etc/ceilometer/ceilometer.conf"
 
 gnocchi_resources_input = '''

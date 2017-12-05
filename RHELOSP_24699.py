@@ -8,12 +8,12 @@ def RHELOSP_24699_test():
         print("No gnocchi user found!")
         return 1
 
-    out = check_openstack_service("gnocchi", "event")
+    out = check_openstack_service("gnocchi", "metric")
     if out != 0:
         print("Gnocchi service is not running!")
         return 1
 
-    out = check_openstack_endpoint("gnocchi", "event")
+    out = check_openstack_endpoint("gnocchi", "metric")
     if out != 0:
         print("Gnocchi endpoint is not found!")
         return 1
