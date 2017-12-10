@@ -294,6 +294,54 @@ def ceilometer_event_show():
     print("There was a problem with list",err)
     return 1, ''
 
+def ceilometer_filter_by_event_type(event_name):
+
+    print("ceilometer event-list -q 'event_type=%s'"%event_name)
+    p = subprocess.Popen("ceilometer event-list -q 'event_type=%s'"%event_name, stdout=subprocess.PIPE, shell=True)
+    (output1, err1) = p.communicate()
+    if err1 is None:
+        if "Missing value" in output1:
+            print("Missing value auth-url required for auth plugin password")
+            return 1, ''
+        else:
+            for line1 in output1.splitlines():
+                print(line1)
+                if event_name in line1:
+                    id_arr1 = line1.split('|')
+                    ev_type = id_arr1[1].strip()
+                    if event_name in ev_type:
+                        print('Event %s exists'%event_name)
+                        return 0, ''
+            print("Didn't find event_type %s "%event_name)
+            return 1, ''
+    else:
+        print("Problem with event-list")
+        return 1, ''
+
+def ceilometer_filter_by_trait(event_name):
+    trait = 'service'
+    print('ceilometer trait-list  -e %s -t %s'%(event_name, trait))
+    p = subprocess.Popen('ceilometer trait-list  -e %s -t %s'%(event_name, trait), stdout=subprocess.PIPE, shell=True)
+    (output1, err1) = p.communicate()
+    if err1 is None:
+        if "Missing value" in output1:
+            print("Missing value auth-url required for auth plugin password")
+            return 1, ''
+        else:
+            for line1 in output1.splitlines():
+                print(line1)
+                if trait in line1:
+                    id_arr1 = line1.split('|')
+                    ev_type = id_arr1[0].strip()
+                    if trait in ev_type:
+                        print('Trait %s exists'%trait)
+                        return 0, ''
+            print("Didn't find trait %s "%trait)
+            return 1, ''
+    else:
+        print("Problem with trait-list")
+        return 1, ''
+
 def check_openstack_event_type_list():
     print("ceilometer event-type-list")
     event_name ="image.update"
