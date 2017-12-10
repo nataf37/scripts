@@ -4,7 +4,6 @@
     <list default="true" id="7b053ac5-d213-422d-8c90-16d7cdc99ecf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RHELOSP_20240.py" afterPath="$PROJECT_DIR$/RHELOSP_20240.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RHELOSP_20241.py" afterPath="$PROJECT_DIR$/RHELOSP_20241.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check_gnocchi_service.py" afterPath="$PROJECT_DIR$/check_gnocchi_service.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,8 +19,8 @@
       <file leaf-file-name="check_gnocchi_service.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/check_gnocchi_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="587">
-              <caret line="341" column="33" lean-forward="false" selection-start-line="341" selection-start-column="33" selection-end-line="341" selection-end-column="33" />
+            <state relative-caret-position="468">
+              <caret line="334" column="43" lean-forward="false" selection-start-line="334" selection-start-column="43" selection-end-line="334" selection-end-column="43" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -102,8 +101,8 @@
       <file leaf-file-name="RHELOSP_20240.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RHELOSP_20240.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="42" lean-forward="false" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+            <state relative-caret-position="85">
+              <caret line="5" column="52" lean-forward="false" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -225,8 +224,8 @@
         <option value="$PROJECT_DIR$/RHELOSP-27781.py" />
         <option value="$PROJECT_DIR$/definitions.py" />
         <option value="$PROJECT_DIR$/RHELOSP_24699.py" />
-        <option value="$PROJECT_DIR$/RHELOSP_20240.py" />
         <option value="$PROJECT_DIR$/RHELOSP_20241.py" />
+        <option value="$PROJECT_DIR$/RHELOSP_20240.py" />
         <option value="$PROJECT_DIR$/check_gnocchi_service.py" />
       </list>
     </option>
@@ -371,13 +370,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1493805393090</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Change in editing pipeline and gnocchi_resources">
-      <created>1501750996310</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1501750996310</updated>
     </task>
     <task id="LOCAL-00008" summary="bugfix in pretest">
       <created>1501751325052</created>
@@ -715,7 +707,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512487940107</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="Added missing ceilometer functions for 20240 and 20241">
+      <created>1512897910491</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1512897910491</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TodoView">
@@ -765,7 +764,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added sys.exit to the rest of the tests, added ceilometer list and show to the functions" />
     <MESSAGE value="Fixed output in 20238 and 20239" />
     <MESSAGE value="ceilometer event show fix" />
     <MESSAGE value="test" />
@@ -790,7 +788,8 @@
     <MESSAGE value="Fix for process check" />
     <MESSAGE value="Another small fix" />
     <MESSAGE value="Fix in 25034" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix in 25034" />
+    <MESSAGE value="Added missing ceilometer functions for 20240 and 20241" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added missing ceilometer functions for 20240 and 20241" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1156,14 +1155,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/RHELOSP_20240.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="42" lean-forward="false" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/RHELOSP_20241.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1172,10 +1163,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/RHELOSP_20240.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="52" lean-forward="false" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/check_gnocchi_service.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
-          <caret line="341" column="33" lean-forward="false" selection-start-line="341" selection-start-column="33" selection-end-line="341" selection-end-column="33" />
+        <state relative-caret-position="468">
+          <caret line="334" column="43" lean-forward="false" selection-start-line="334" selection-start-column="43" selection-end-line="334" selection-end-column="43" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
