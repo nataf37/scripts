@@ -308,7 +308,7 @@ def ceilometer_filter_by_event_type(event_name):
                 print(line1)
                 if event_name in line1:
                     id_arr1 = line1.split('|')
-                    ev_type = id_arr1[1].strip()
+                    ev_type = id_arr1[2].strip()
                     if event_name in ev_type:
                         print('Event %s exists'%event_name)
                         return 0, ''
@@ -332,8 +332,7 @@ def ceilometer_filter_by_trait(event_name):
                 print(line1)
                 if trait in line1:
                     id_arr1 = line1.split('|')
-                    ev_type = id_arr1[0].strip()
-                    print 'here it is: %s' % ev_type
+                    ev_type = id_arr1[1].strip()
                     if trait in ev_type:
                         print('Trait %s exists'%trait)
                         return 0, ''

@@ -18,8 +18,8 @@
       <file leaf-file-name="check_gnocchi_service.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/check_gnocchi_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="335" column="52" lean-forward="false" selection-start-line="335" selection-start-column="52" selection-end-line="335" selection-end-column="52" />
+            <state relative-caret-position="264">
+              <caret line="310" column="39" lean-forward="false" selection-start-line="310" selection-start-column="39" selection-end-line="310" selection-end-column="39" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -370,13 +370,6 @@
       <option name="presentableId" value="Default" />
       <updated>1493805393090</updated>
     </task>
-    <task id="LOCAL-00009" summary="one more bugfix in pretest">
-      <created>1501751526231</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1501751526231</updated>
-    </task>
     <task id="LOCAL-00010" summary="one+ more bugfix in pretest">
       <created>1501756149028</created>
       <option name="number" value="00010" />
@@ -713,7 +706,14 @@
       <option name="project" value="LOCAL" />
       <updated>1512898045061</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="Bugfixes">
+      <created>1512898105400</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1512898105400</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1172,8 +1172,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/check_gnocchi_service.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="335" column="52" lean-forward="false" selection-start-line="335" selection-start-column="52" selection-end-line="335" selection-end-column="52" />
+        <state relative-caret-position="264">
+          <caret line="310" column="39" lean-forward="false" selection-start-line="310" selection-start-column="39" selection-end-line="310" selection-end-column="39" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
