@@ -409,6 +409,26 @@ def gnocchi_archive_policy_is_deleted(event_name):
         print("Problem with archive-policy delete")
         return 1, ''
 
+def gnocchi_archive_policy_show(event_name):
+    bash_string="gnocchi archive-policy show"
+    exec_string = "%s %s"%(bash_string, event_name)
+    print(exec_string)
+    p = subprocess.Popen(exec_string, stdout=subprocess.PIPE, shell=True)
+    (output1, err1) = p.communicate()
+    if err1 is None:
+        if "Missing value" in output1:
+            print("Missing value auth-url required for auth plugin password")
+            return 1, ''
+        else:
+            for line1 in output1.splitlines():
+                print(line1)
+                if event_name in line1:
+                    print("The archive policy %s is in the list"%event_name)
+                    return 0, ''
+    else:
+        print("Problem with archive-policy show")
+        return 1, ''
+
 def check_openstack_event_type_list():
     print("ceilometer event-type-list")
     event_name ="image.update"
