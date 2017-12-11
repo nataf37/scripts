@@ -9,7 +9,7 @@ def RHELOSP_8277_test():
         return 1
 
     out = gnocchi_archive_policy_show(archive_policy_name)
-    if out[0] == 0:
+    if out[0] != 0:
         print("Policy named %s is not shown" % archive_policy_name)
         return 1
 
