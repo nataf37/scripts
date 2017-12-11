@@ -171,6 +171,6 @@ archive_policy =  ''' \
     -m count \
     -d 'points:5,granularity:60' \
     -d 'granularity:300,timespan:900' \
-    -d 'points:3,timespan:10800'''
+    -d 'points:3,timespan:10800' '''
 
 archive_policy_name = "DeleteMeArchivePolicy"
