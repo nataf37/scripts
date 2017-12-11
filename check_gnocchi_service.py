@@ -401,7 +401,7 @@ def gnocchi_archive_policy_is_deleted(event_name):
             for line1 in output1.splitlines():
                 print(line1)
                 if event_name in line1:
-                    print("The archive policy %s wasn't deleted!"%event_name)
+                    print("The archive policy %s is in the list!"%event_name)
                     return 1, ''
             print ("The archive-policy %s deleted"%event_name)
             return 0, ''
