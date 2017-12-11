@@ -164,13 +164,13 @@ proc_list = ["openstack-ceilometer-notification.service", "openstack-ceilometer-
 gnocchi_service_list = ["gnocchi-metricd", "gnocchi-statsd"]
 
 archive_policy =  '''
-    -b '0' 
-    -m mean 
-    -m max 
-    -m min 
-    -m count
-    -d 'points:5,granularity:60'
-    -d 'granularity:300,timespan:900'
+    -b '0' \
+    -m mean \
+    -m max \
+    -m min \
+    -m count \
+    -d 'points:5,granularity:60' \
+    -d 'granularity:300,timespan:900' \
     -d 'points:3,timespan:10800'''
 
 archive_policy_name = "DeleteMeArchivePolicy"
