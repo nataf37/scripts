@@ -345,7 +345,7 @@ def ceilometer_filter_by_trait(event_name):
 def ceilometer_archive_policy_create(event_name):
     field = 'name'
     bash_string="gnocchi archive-policy create"
-    exec_string = "%s %s %s %s"%(bash_string, archive_policy, event_name)
+    exec_string = "%s %s %s"%(bash_string, archive_policy, event_name)
     print(exec_string)
     p = subprocess.Popen(exec_string, stdout=subprocess.PIPE, shell=True)
     (output1, err1) = p.communicate()
