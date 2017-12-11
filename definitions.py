@@ -173,4 +173,8 @@ archive_policy =  """ \
     -d 'granularity:300,timespan:900' \
     -d 'points:3,timespan:10800' """
 
+archive_policy_check = ['points: 5, granularity: 0:01:00, timespan: 0:05:00',
+'points: 3, granularity: 0:05:00, timespan: 0:15:00',
+'points: 3, granularity: 1:00:00, timespan: 3:00:00']
+
 archive_policy_name = "DeleteMeArchivePolicy"

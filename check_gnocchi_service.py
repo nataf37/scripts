@@ -343,7 +343,6 @@ def ceilometer_filter_by_trait(event_name):
         return 1, ''
 
 def ceilometer_archive_policy_create(event_name):
-    field = 'name'
     bash_string="gnocchi archive-policy create"
     exec_string = "%s %s %s"%(bash_string, archive_policy, event_name)
     print(exec_string)
@@ -354,16 +353,22 @@ def ceilometer_archive_policy_create(event_name):
             print("Missing value auth-url required for auth plugin password")
             return 1, ''
         else:
+            res = 0
             for line1 in output1.splitlines():
                 print(line1)
-                if event_name in line1:
-                    id_arr1 = line1.split('|')
-                    ev_type = id_arr1[1].strip()
-                    if field in ev_type:
-                        print('Field %s exists'%field)
-                        return 0, ''
-            print("Didn't find field %s "%field)
-            return 1, ''
+                for arch_line in archive_policy_check:
+                    if arch_line in line1:
+                        id_arr1 = line1.split('|')
+                        ev_type = id_arr1[1].strip()
+                        if arch_line in ev_type:
+                            print('Line %s exists'%arch_line)
+                            res+=1
+            if res == len(archive_policy_check):
+                print('All the line exist')
+                return 0, ''
+            else:
+                print("Didn't find one of the lisnes")
+                return 1, ''
     else:
         print("Problem with archive-policy create")
         return 1, ''
