@@ -358,10 +358,10 @@ def ceilometer_archive_policy_create(event_name):
                 print(line1)
                 for arch_line in archive_policy_check:
                     if arch_line in line1:
-                        print('Line %s exists'%arch_line)
+                        #print('Line %s exists'%arch_line)
                         res+=1
             if res == len(archive_policy_check):
-                print('All the line exist')
+                print('All the lines exist')
                 return 0, ''
             else:
                 print("Didn't find one of the lines")
@@ -369,6 +369,24 @@ def ceilometer_archive_policy_create(event_name):
     else:
         print("Problem with archive-policy create")
         return 1, ''
+
+def ceilometer_archive_policy_delete(event_name):
+    bash_string="gnocchi archive-policy delete"
+    exec_string = "%s %s"%(bash_string, event_name)
+    print(exec_string)
+    p = subprocess.Popen(exec_string, stdout=subprocess.PIPE, shell=True)
+    (output1, err1) = p.communicate()
+    if err1 is None:
+        if "Missing value" in output1:
+            print("Missing value auth-url required for auth plugin password")
+            return 1, ''
+        else:
+            print ("The archive-policy %s deleted"%event_name)
+            return 0, ''
+    else:
+        print("Problem with archive-policy delete")
+        return 1, ''
+
 
 def check_openstack_event_type_list():
     print("ceilometer event-type-list")
