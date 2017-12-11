@@ -358,16 +358,13 @@ def ceilometer_archive_policy_create(event_name):
                 print(line1)
                 for arch_line in archive_policy_check:
                     if arch_line in line1:
-                        id_arr1 = line1.split('|')
-                        ev_type = id_arr1[1].strip()
-                        if arch_line in ev_type:
-                            print('Line %s exists'%arch_line)
-                            res+=1
+                        print('Line %s exists'%arch_line)
+                        res+=1
             if res == len(archive_policy_check):
                 print('All the line exist')
                 return 0, ''
             else:
-                print("Didn't find one of the lisnes")
+                print("Didn't find one of the lines")
                 return 1, ''
     else:
         print("Problem with archive-policy create")
