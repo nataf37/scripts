@@ -163,7 +163,7 @@ gnocchi_resources_volume_input = """
 proc_list = ["openstack-ceilometer-notification.service", "openstack-ceilometer-collector.service", "openstack-ceilometer-central.service"]
 gnocchi_service_list = ["gnocchi-metricd", "gnocchi-statsd"]
 
-archive_policy =  '''
+archive_policy =  ''' \
     -b '0' \
     -m mean \
     -m max \
