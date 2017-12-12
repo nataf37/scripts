@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7b053ac5-d213-422d-8c90-16d7cdc99ecf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RHELOSP_8293.py" afterPath="$PROJECT_DIR$/RHELOSP_8293.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check_gnocchi_service.py" afterPath="$PROJECT_DIR$/check_gnocchi_service.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,8 +18,8 @@
       <file leaf-file-name="check_gnocchi_service.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/check_gnocchi_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="528" column="38" lean-forward="false" selection-start-line="528" selection-start-column="38" selection-end-line="528" selection-end-column="38" />
+            <state relative-caret-position="-85">
+              <caret line="489" column="52" lean-forward="false" selection-start-line="489" selection-start-column="52" selection-end-line="489" selection-end-column="52" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -236,8 +236,8 @@
         <option value="$PROJECT_DIR$/RHELOSP_8277.py" />
         <option value="$PROJECT_DIR$/RHELOSP_8278.py" />
         <option value="$PROJECT_DIR$/RHELOSP_8292.py" />
-        <option value="$PROJECT_DIR$/check_gnocchi_service.py" />
         <option value="$PROJECT_DIR$/RHELOSP_8293.py" />
+        <option value="$PROJECT_DIR$/check_gnocchi_service.py" />
       </list>
     </option>
   </component>
@@ -381,13 +381,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1493805393090</updated>
-    </task>
-    <task id="LOCAL-00034" summary="debugging">
-      <created>1502697764646</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1502697764646</updated>
     </task>
     <task id="LOCAL-00035" summary="debugging">
       <created>1502697887172</created>
@@ -725,7 +718,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513082036984</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="bugfix 8293">
+      <created>1513082150746</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1513082150746</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1192,8 +1192,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/check_gnocchi_service.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="782">
-          <caret line="528" column="38" lean-forward="false" selection-start-line="528" selection-start-column="38" selection-end-line="528" selection-end-column="38" />
+        <state relative-caret-position="-85">
+          <caret line="489" column="52" lean-forward="false" selection-start-line="489" selection-start-column="52" selection-end-line="489" selection-end-column="52" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
