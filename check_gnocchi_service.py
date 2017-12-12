@@ -498,6 +498,32 @@ def test_new_resource(resource_name, resource_id):
     print('Problem with openstack metric resource list')
     return 1
 
+def search_resource(resource_name, resource_id):
+    if resource_name == "network":
+        resource_name = 'instance_network_interface'
+    p = subprocess.Popen("openstack metric resource search 'type= %s'" % resource_name, stdout=subprocess.PIPE, shell=True)
+    (output, err) = p.communicate()
+    if err is None:
+        if "Missing value" in output:
+            print("Missing value auth-url required for auth plugin password")
+            return 1
+        else:
+            for line in output.splitlines():
+                print(line)
+                if resource_name in line:
+                    id_arr = line.split('|')
+                    metric_id = id_arr[1].strip()
+                    if resource_id == metric_id:
+                        print("The resource %s is in metric list" % resource_name)
+                        return 0
+            print("The resource %s is not found in metric list" % resource_id)
+            return 1
+
+        print("The resource %s is not found in metric list" % resource_name)
+        return 1
+
+    print('Problem with openstack metric resource list')
+    return 1
 
 def remove_resource(resource_id, resource_name):
     p = subprocess.Popen("openstack %s delete %s*" % (resource_name, resource_id), stdout=subprocess.PIPE, shell=True)
