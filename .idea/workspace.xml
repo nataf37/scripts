@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7b053ac5-d213-422d-8c90-16d7cdc99ecf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/check_gnocchi_service.py" afterPath="$PROJECT_DIR$/check_gnocchi_service.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,8 +17,8 @@
       <file leaf-file-name="check_gnocchi_service.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/check_gnocchi_service.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="517" column="112" lean-forward="false" selection-start-line="517" selection-start-column="112" selection-end-line="517" selection-end-column="112" />
+            <state relative-caret-position="782">
+              <caret line="528" column="38" lean-forward="false" selection-start-line="528" selection-start-column="38" selection-end-line="528" selection-end-column="38" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -382,13 +381,6 @@
       <option name="presentableId" value="Default" />
       <updated>1493805393090</updated>
     </task>
-    <task id="LOCAL-00031" summary="more bugfix">
-      <created>1502697113489</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1502697113489</updated>
-    </task>
     <task id="LOCAL-00032" summary="more bugfix">
       <created>1502697143085</created>
       <option name="number" value="00032" />
@@ -725,7 +717,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513081663155</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="bugfix 8293">
+      <created>1513081999192</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1513081999192</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1192,8 +1191,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/check_gnocchi_service.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="517" column="112" lean-forward="false" selection-start-line="517" selection-start-column="112" selection-end-line="517" selection-end-column="112" />
+        <state relative-caret-position="782">
+          <caret line="528" column="38" lean-forward="false" selection-start-line="528" selection-start-column="38" selection-end-line="528" selection-end-column="38" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
