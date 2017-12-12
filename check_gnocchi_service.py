@@ -12,7 +12,7 @@ def create_new_resource(resource_type, resource_name=""):
         if resource_name == "":
             resource_name = "MyFirstInstance"
 
-        (res, metric_id) = resource_exists('server',resource_name)
+        (res, metric_id) = resource_exists('server', resource_name)
         if res == 0:
             print "Instance %s already exists" % resource_name
             return 0, metric_id
@@ -40,19 +40,19 @@ def create_new_resource(resource_type, resource_name=""):
                                 metric_id = id_arr[2].strip()
                                 return 0, metric_id
                         print("Couldn't find instance id")
-                        return 1,''
+                        return 1, ''
                 else:
                     print("There was error", err)
                     return 1, ''
             else:
                 print("Couldn't create flavor")
-                return 1,''
+                return 1, ''
         else:
             print("Couldn't create image")
-            return 1,''
+            return 1, ''
 
         print("Error building instance")
-        return 1,''
+        return 1, ''
 
 
     elif resource_type == "image":
@@ -63,47 +63,49 @@ def create_new_resource(resource_type, resource_name=""):
         (output, err) = p.communicate()
         if err == None:
             print("source ~/stackrc")
-            p1 = subprocess.Popen('source ~/stackrc',stdout=subprocess.PIPE, shell=True)
+            p1 = subprocess.Popen('source ~/stackrc', stdout=subprocess.PIPE, shell=True)
             (output, err) = p1.communicate()
             if err != None:
                 print("Couldn't find ~/stackrc")
                 print(output)
-                return 1,''
+                return 1, ''
 
             (res, metric_id) = resource_exists('image', resource_name)
             if res == 0:
                 print "Image %s already exists" % resource_name
                 return 0, metric_id
 
-            print("openstack image create --disk-format qcow2 --container-format bare --public --file %s %s" %(image_name,resource_name))
+            print("openstack image create --disk-format qcow2 --container-format bare --public --file %s %s" % (
+            image_name, resource_name))
             p2 = subprocess.Popen(
-                "openstack image create --disk-format qcow2 --container-format bare --public --file %s %s" %(image_name,resource_name),
+                "openstack image create --disk-format qcow2 --container-format bare --public --file %s %s" % (
+                image_name, resource_name),
                 stdout=subprocess.PIPE, shell=True)
             (output, err) = p2.communicate()
             if err is None:
                 if "Missing value" in output:
                     print("Missing value auth-url required for auth plugin password")
-                    return 1,''
+                    return 1, ''
                 else:
                     print("Image is built!")
                     for line in output.splitlines():
                         if "id" in line:
                             id_arr = line.split('|')
                             metric_id = id_arr[2].strip()
-                            print "Here is the id: %s"%metric_id
+                            print "Here is the id: %s" % metric_id
                             return 0, metric_id
-                    return 1,''
+                    return 1, ''
             else:
                 print("Error building image")
-                return 1,''
+                return 1, ''
 
     elif resource_type == "flavor":
         if resource_name == "":
             resource_name = "m1.extra_tiny"
 
-        (res, metric_id) = resource_exists('flavor',resource_name)
+        (res, metric_id) = resource_exists('flavor', resource_name)
         if res == 0:
-            print "Flavor %s already exists"%resource_name
+            print "Flavor %s already exists" % resource_name
             return 0, metric_id
 
         p = subprocess.Popen(
@@ -113,29 +115,29 @@ def create_new_resource(resource_type, resource_name=""):
         if err is None:
             if "Missing value" in output:
                 print("Missing value auth-url required for auth plugin password")
-                return 1,''
+                return 1, ''
             else:
                 print("Flavor is built!")
                 for line in output.splitlines():
                     if "id" in line:
                         id_arr = line.split('|')
                         metric_id = id_arr[2].strip()
-                        print("Resource id is %s"%metric_id)
+                        print("Resource id is %s" % metric_id)
                         return 0, metric_id
                 print("Error building flavor")
-                return 1,''
+                return 1, ''
 
         else:
             print("Error building flavor")
-            return 1,''
+            return 1, ''
 
     elif resource_type == "volume":
         if resource_name == "":
             resource_name = "my-volume"
 
-        (res, metric_id) = resource_exists('volume',resource_name)
+        (res, metric_id) = resource_exists('volume', resource_name)
         if res == 0:
-            print "Volume %s already exists"%resource_name
+            print "Volume %s already exists" % resource_name
             return 0, metric_id
 
         p = subprocess.Popen("openstack volume create --size 2 %s" % resource_name, stdout=subprocess.PIPE,
@@ -144,7 +146,7 @@ def create_new_resource(resource_type, resource_name=""):
         if err is None:
             if "Missing value" in output:
                 print("Missing value auth-url required for auth plugin password")
-                return 1,''
+                return 1, ''
             else:
                 print("Volume is built!")
                 for line in output.splitlines():
@@ -154,15 +156,15 @@ def create_new_resource(resource_type, resource_name=""):
                         print("Resource id is %s" % metric_id)
                         return 0, metric_id
                 else:
-                    return 1,''
+                    return 1, ''
 
     elif resource_type == "network":
         if resource_name == "":
             resource_name = "FakeNetGnocchi"
 
-        (res, metric_id) = resource_exists('network',resource_name)
+        (res, metric_id) = resource_exists('network', resource_name)
         if res == 0:
-            print "Network %s already exists"%resource_name
+            print "Network %s already exists" % resource_name
             return 0, metric_id
 
         p = subprocess.Popen("openstack network create %s" % resource_name, stdout=subprocess.PIPE,
@@ -171,7 +173,7 @@ def create_new_resource(resource_type, resource_name=""):
         if err is None:
             if "Missing value" in output:
                 print("Missing value auth-url required for auth plugin password")
-                return 1,''
+                return 1, ''
             else:
                 print("Network is built!")
                 for line in output.splitlines():
@@ -181,13 +183,14 @@ def create_new_resource(resource_type, resource_name=""):
                         print("Resource id is %s" % metric_id)
                         return 0, metric_id
                 else:
-                    return 1,''
+                    return 1, ''
         else:
             print("Error building network")
-            return 1,''
+            return 1, ''
     else:
         print("Not known resource %s" % resource_type)
-        return 1,''
+        return 1, ''
+
 
 def alarm_type_exists(alarm_type):
     print("ceilometer help")
@@ -210,66 +213,69 @@ def alarm_type_exists(alarm_type):
     print("There was a problem with list", err)
     return 1, ''
 
+
 def resource_exists(resource_type, resource_name):
-    print("openstack %s list"%resource_type)
-    p = subprocess.Popen("openstack %s list"%resource_type,stdout=subprocess.PIPE, shell=True)
+    print("openstack %s list" % resource_type)
+    p = subprocess.Popen("openstack %s list" % resource_type, stdout=subprocess.PIPE, shell=True)
     (output, err) = p.communicate()
     if err is None:
         if "Missing value" in output:
             print("Missing value auth-url required for auth plugin password")
-            return 1,''
+            return 1, ''
         else:
             for line in output.splitlines():
                 print(line)
                 if resource_name in line:
                     id_arr = line.split('|')
                     metric_id = id_arr[1].strip()
-                    print("Resource id is %s"%metric_id)
+                    print("Resource id is %s" % metric_id)
                     return 0, metric_id
             print("Didn't find resource in the list")
-            return 1,''
-    print("There was a problem with list",err)
+            return 1, ''
+    print("There was a problem with list", err)
     return 1, ''
+
 
 def ceilometer_event_list():
     print("ceilometer event-list")
-    event_name ="identity.domain.created"
-    p = subprocess.Popen("ceilometer event-list",stdout=subprocess.PIPE, shell=True)
+    event_name = "identity.domain.created"
+    p = subprocess.Popen("ceilometer event-list", stdout=subprocess.PIPE, shell=True)
     (output, err) = p.communicate()
     if err is None:
         if "Missing value" in output:
             print("Missing value auth-url required for auth plugin password")
-            return 1,''
+            return 1, ''
         else:
             for line in output.splitlines():
                 print(line)
                 if event_name in line:
-                    print 'Event %s found!'%event_name
+                    print 'Event %s found!' % event_name
                     return 0, ''
-            print("Didn't find %s in the list"%event_name)
-            return 1,''
-    print("There was a problem with list",err)
+            print("Didn't find %s in the list" % event_name)
+            return 1, ''
+    print("There was a problem with list", err)
     return 1, ''
+
 
 def ceilometer_event_show():
     print("ceilometer event-list")
-    event_name ="identity.domain.created"
-    p = subprocess.Popen("ceilometer event-list",stdout=subprocess.PIPE, shell=True)
+    event_name = "identity.domain.created"
+    p = subprocess.Popen("ceilometer event-list", stdout=subprocess.PIPE, shell=True)
     (output, err) = p.communicate()
     if err is None:
         if "Missing value" in output:
             print("Missing value auth-url required for auth plugin password")
-            return 1,''
+            return 1, ''
         else:
             for line in output.splitlines():
                 print(line)
                 if event_name in line:
                     id_arr = line.split('|')
                     metric_id = id_arr[1].strip()
-                    print("Resource id is %s"%metric_id)
+                    print("Resource id is %s" % metric_id)
 
-                    print("ceilometer event-show %s"%metric_id)
-                    p = subprocess.Popen("ceilometer event-show %s"%metric_id, stdout=subprocess.PIPE, shell=True)
+                    print("ceilometer event-show %s" % metric_id)
+                    p = subprocess.Popen("ceilometer event-show %s" % metric_id, stdout=subprocess.PIPE, shell=True)
                     (output1, err1) = p.communicate()
                     if err1 is None:
                         if "Missing value" in output1:
@@ -282,22 +288,22 @@ def ceilometer_event_show():
                                     id_arr1 = line1.split('|')
                                     ev_type = id_arr1[1].strip()
                                     if "event_type" in ev_type:
-                                        print('Event %s exists'%event_name)
+                                        print('Event %s exists' % event_name)
                                         return 0, ''
-                            print("Didn't find event_type %s "%event_name)
+                            print("Didn't find event_type %s " % event_name)
                             return 1, ''
                     else:
                         print("Problem with event-show")
                         return 1, ''
-            print("Didn't find %s in the list"%event_name)
-            return 1,''
-    print("There was a problem with list",err)
+            print("Didn't find %s in the list" % event_name)
+            return 1, ''
+    print("There was a problem with list", err)
     return 1, ''
 
-def ceilometer_filter_by_event_type(event_name):
 
-    print("ceilometer event-list -q 'event_type=%s'"%event_name)
-    p = subprocess.Popen("ceilometer event-list -q 'event_type=%s'"%event_name, stdout=subprocess.PIPE, shell=True)
+def ceilometer_filter_by_event_type(event_name):
+    print("ceilometer event-list -q 'event_type=%s'" % event_name)
+    p = subprocess.Popen("ceilometer event-list -q 'event_type=%s'" % event_name, stdout=subprocess.PIPE, shell=True)
     (output1, err1) = p.communicate()
     if err1 is None:
         if "Missing value" in output1:
@@ -310,18 +316,19 @@ def ceilometer_filter_by_event_type(event_name):
                     id_arr1 = line1.split('|')
                     ev_type = id_arr1[2].strip()
                     if event_name in ev_type:
-                        print('Event %s exists'%event_name)
+                        print('Event %s exists' % event_name)
                         return 0, ''
-            print("Didn't find event_type %s "%event_name)
+            print("Didn't find event_type %s " % event_name)
             return 1, ''
     else:
         print("Problem with event-list")
         return 1, ''
 
+
 def ceilometer_filter_by_trait(event_name):
     trait = 'service'
-    print('ceilometer trait-list  -e %s -t %s'%(event_name, trait))
-    p = subprocess.Popen('ceilometer trait-list  -e %s -t %s'%(event_name, trait), stdout=subprocess.PIPE, shell=True)
+    print('ceilometer trait-list  -e %s -t %s' % (event_name, trait))
+    p = subprocess.Popen('ceilometer trait-list  -e %s -t %s' % (event_name, trait), stdout=subprocess.PIPE, shell=True)
     (output1, err1) = p.communicate()
     if err1 is None:
         if "Missing value" in output1:
@@ -334,17 +341,18 @@ def ceilometer_filter_by_trait(event_name):
                     id_arr1 = line1.split('|')
                     ev_type = id_arr1[1].strip()
                     if trait in ev_type:
-                        print('Trait %s exists'%trait)
+                        print('Trait %s exists' % trait)
                         return 0, ''
-            print("Didn't find trait %s "%trait)
+            print("Didn't find trait %s " % trait)
             return 1, ''
     else:
         print("Problem with trait-list")
         return 1, ''
 
+
 def gnocchi_archive_policy_create(event_name):
-    bash_string="gnocchi archive-policy create"
-    exec_string = "%s %s %s"%(bash_string, archive_policy, event_name)
+    bash_string = "gnocchi archive-policy create"
+    exec_string = "%s %s %s" % (bash_string, archive_policy, event_name)
     print(exec_string)
     p = subprocess.Popen(exec_string, stdout=subprocess.PIPE, shell=True)
     (output1, err1) = p.communicate()
@@ -358,8 +366,8 @@ def gnocchi_archive_policy_create(event_name):
                 print(line1)
                 for arch_line in archive_policy_check:
                     if arch_line in line1:
-                        #print('Line %s exists'%arch_line)
-                        res+=1
+                        # print('Line %s exists'%arch_line)
+                        res += 1
             if res == len(archive_policy_check):
                 print('All the lines exist')
                 return 0, ''
@@ -370,9 +378,10 @@ def gnocchi_archive_policy_create(event_name):
         print("Problem with archive-policy create")
         return 1, ''
 
+
 def gnocchi_archive_policy_delete(event_name):
-    bash_string="gnocchi archive-policy delete"
-    exec_string = "%s %s"%(bash_string, event_name)
+    bash_string = "gnocchi archive-policy delete"
+    exec_string = "%s %s" % (bash_string, event_name)
     print(exec_string)
     p = subprocess.Popen(exec_string, stdout=subprocess.PIPE, shell=True)
     (output1, err1) = p.communicate()
@@ -381,14 +390,15 @@ def gnocchi_archive_policy_delete(event_name):
             print("Missing value auth-url required for auth plugin password")
             return 1, ''
         else:
-            print ("The archive-policy %s deleted"%event_name)
+            print ("The archive-policy %s deleted" % event_name)
             return 0, ''
     else:
         print("Problem with archive-policy delete")
         return 1, ''
 
+
 def gnocchi_archive_policy_is_deleted(event_name):
-    bash_string="gnocchi archive-policy list"
+    bash_string = "gnocchi archive-policy list"
     exec_string = bash_string
     print(exec_string)
     p = subprocess.Popen(exec_string, stdout=subprocess.PIPE, shell=True)
@@ -401,17 +411,18 @@ def gnocchi_archive_policy_is_deleted(event_name):
             for line1 in output1.splitlines():
                 print(line1)
                 if event_name in line1:
-                    print("The archive policy %s is in the list!"%event_name)
+                    print("The archive policy %s is in the list!" % event_name)
                     return 1, ''
-            print ("The archive-policy %s deleted"%event_name)
+            print ("The archive-policy %s deleted" % event_name)
             return 0, ''
     else:
         print("Problem with archive-policy delete")
         return 1, ''
 
+
 def gnocchi_archive_policy_show(event_name):
-    bash_string="gnocchi archive-policy show"
-    exec_string = "%s %s"%(bash_string, event_name)
+    bash_string = "gnocchi archive-policy show"
+    exec_string = "%s %s" % (bash_string, event_name)
     print(exec_string)
     p = subprocess.Popen(exec_string, stdout=subprocess.PIPE, shell=True)
     (output1, err1) = p.communicate()
@@ -423,51 +434,53 @@ def gnocchi_archive_policy_show(event_name):
             for line1 in output1.splitlines():
                 print(line1)
                 if event_name in line1:
-                    print("The archive policy %s is in the list"%event_name)
+                    print("The archive policy %s is in the list" % event_name)
                     return 0, ''
     else:
         print("Problem with archive-policy show")
         return 1, ''
 
+
 def check_openstack_event_type_list():
     print("ceilometer event-type-list")
-    event_name ="image.update"
-    p = subprocess.Popen("ceilometer event-type-list",stdout=subprocess.PIPE, shell=True)
+    event_name = "image.update"
+    p = subprocess.Popen("ceilometer event-type-list", stdout=subprocess.PIPE, shell=True)
     (output, err) = p.communicate()
     if err is None:
         if "Missing value" in output:
             print("Missing value auth-url required for auth plugin password")
-            return 1,''
+            return 1, ''
         else:
             for line in output.splitlines():
                 print(line)
                 if event_name in line:
-                    print 'Event type %s found!'%event_name
+                    print 'Event type %s found!' % event_name
                     return 0, ''
-            print("Didn't find %s in the list"%event_name)
-            return 1,''
-    print("There was a problem with type list",err)
+            print("Didn't find %s in the list" % event_name)
+            return 1, ''
+    print("There was a problem with type list", err)
     return 1, ''
+
 
 def check_openstack_trait_list():
     event_name = "volume.create.start"
-    print("ceilometer trait-description-list -e %s"%event_name)
+    print("ceilometer trait-description-list -e %s" % event_name)
     trait_name = "created_at"
-    p = subprocess.Popen("ceilometer trait-description-list -e %s"%event_name,stdout=subprocess.PIPE, shell=True)
+    p = subprocess.Popen("ceilometer trait-description-list -e %s" % event_name, stdout=subprocess.PIPE, shell=True)
     (output, err) = p.communicate()
     if err is None:
         if "Missing value" in output:
             print("Missing value auth-url required for auth plugin password")
-            return 1,''
+            return 1, ''
         else:
             for line in output.splitlines():
                 print(line)
                 if trait_name in line:
-                    print 'Trait type %s found in %s!'%(trait_name,event_name)
+                    print 'Trait type %s found in %s!' % (trait_name, event_name)
                     return 0, ''
-            print("Didn't find %s in the list"%event_name)
-            return 1,''
-    print("There was a problem with trait list",err)
+            print("Didn't find %s in the list" % event_name)
+            return 1, ''
+    print("There was a problem with trait list", err)
     return 1, ''
 
 
@@ -498,7 +511,8 @@ def test_new_resource(resource_name, resource_id):
     print('Problem with openstack metric resource list')
     return 1
 
-def search_resource(resource_name, resource_id):
+
+def search_resource(resource_id, resource_name):
     if resource_name == "network":
         resource_name = 'instance_network_interface'
     p = subprocess.Popen("openstack metric resource search 'type= %s'" % resource_name, stdout=subprocess.PIPE, shell=True)
@@ -506,7 +520,7 @@ def search_resource(resource_name, resource_id):
     if err is None:
         if "Missing value" in output:
             print("Missing value auth-url required for auth plugin password")
-            return 1
+            return 1, ''
         else:
             for line in output.splitlines():
                 print(line)
@@ -515,15 +529,16 @@ def search_resource(resource_name, resource_id):
                     metric_id = id_arr[1].strip()
                     if resource_id == metric_id:
                         print("The resource %s is in metric list" % resource_name)
-                        return 0
+                        return 0, ''
             print("The resource %s is not found in metric list" % resource_id)
-            return 1
+            return 1, ''
 
         print("The resource %s is not found in metric list" % resource_name)
-        return 1
+        return 1, ''
 
     print('Problem with openstack metric resource list')
-    return 1
+    return 1, ''
+
 
 def remove_resource(resource_id, resource_name):
     p = subprocess.Popen("openstack %s delete %s*" % (resource_name, resource_id), stdout=subprocess.PIPE, shell=True)
@@ -558,7 +573,7 @@ def find_resources(resource_name):
     if err is None:
         if "Missing value" in output:
             print("Missing value auth-url required for auth plugin password")
-            return 1,''
+            return 1, ''
         else:
             for line in output.splitlines():
                 if resource_name in line:
@@ -566,6 +581,7 @@ def find_resources(resource_name):
                     metric_id = id_arr[1].strip()
                     resource_list.append(metric_id)
     return resource_list
+
 
 def list_resources():
     resource_list = []
@@ -575,9 +591,9 @@ def list_resources():
     if err is None:
         if "Missing value" in output:
             print("Missing value auth-url required for auth plugin password")
-            return 1,''
+            return 1, ''
         else:
-            if len(output.splitlines())> 4:
+            if len(output.splitlines()) > 4:
                 for line in output.splitlines():
                     print line
                 return 0
@@ -592,7 +608,7 @@ def check_aodh_alarm(outline):
     max_counter = len(aodh_alarm_list)
     for aodh_line in aodh_alarm_list:
         if aodh_line in outline:
-            print "Found %s"%aodh_line
+            print "Found %s" % aodh_line
             counter = counter + 1
         else:
             print outline
@@ -602,41 +618,44 @@ def check_aodh_alarm(outline):
         print "The list is full"
         return True
 
-def check_aodh_alarm_list(extracted_alarm):
-    alarm_name="MyAlarm"
-    alarm_type="test"
-    res1=False
-    print("aodh alarm create --name '%s' -t %s"%(alarm_name, alarm_type))
 
-    p = subprocess.Popen("aodh alarm create --name '%s' -t %s"%(alarm_name, alarm_type),stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
+def check_aodh_alarm_list(extracted_alarm):
+    alarm_name = "MyAlarm"
+    alarm_type = "test"
+    res1 = False
+    print("aodh alarm create --name '%s' -t %s" % (alarm_name, alarm_type))
+
+    p = subprocess.Popen("aodh alarm create --name '%s' -t %s" % (alarm_name, alarm_type), stdout=subprocess.PIPE,
+                         stderr=subprocess.STDOUT, shell=True)
     (output, err) = p.communicate()
 
     if err is None:
         if "Missing value" in output:
             print("Missing value auth-url required for auth plugin password")
-            return 1,''
+            return 1, ''
         else:
             for line in output.splitlines():
-                #print(line)
+                # print(line)
                 if extracted_alarm in line:
-                    print 'This alarm: %s is not supposed to be in the list!'%extracted_alarm
+                    print 'This alarm: %s is not supposed to be in the list!' % extracted_alarm
                     return 1, ''
 
                 if 'invalid choice' in line:
                     print line
                     res1 = check_aodh_alarm(line)
                     if res1:
-                        print("The aodh list os full, %s is not in it"%extracted_alarm)
+                        print("The aodh list os full, %s is not in it" % extracted_alarm)
                         return 0, ''
 
             print "Didn't find the list"
             return 1, ''
     else:
-        print("There was a problem with aodh list",err)
+        print("There was a problem with aodh list", err)
         return 1, ''
 
+
 def create_aodh_alarm(alarm_type, threshold, metrics):
-#    aodh alarm create --name 'MyAlarm' -t 'gnocchi_aggregation_by_metrics_threshold' --aggregation-method 'min' --metric disk.usage --threshold 4.0
+    #    aodh alarm create --name 'MyAlarm' -t 'gnocchi_aggregation_by_metrics_threshold' --aggregation-method 'min' --metric disk.usage --threshold 4.0
     print("aodh alarm create \
     --name 'MyAlarm_%s' \
     --type %s \
@@ -644,7 +663,7 @@ def create_aodh_alarm(alarm_type, threshold, metrics):
     --threshold %f \
     --resource-type metric \
     --metrics %s \
-    --query '{'=': {'name': '%s'}}'"%(alarm_type, alarm_type, threshold, metrics, metrics))
+    --query '{'=': {'name': '%s'}}'" % (alarm_type, alarm_type, threshold, metrics, metrics))
 
     p = subprocess.Popen("aodh alarm create \
     --name 'MyAlarm_%s' \
@@ -653,30 +672,30 @@ def create_aodh_alarm(alarm_type, threshold, metrics):
     --threshold %f \
     --resource-type metric \
     --metrics %s \
-    --query '{'=': {'name': '%s'}}'"%(alarm_type, alarm_type, threshold, metrics, metrics) \
-    ,stdout=subprocess.PIPE, shell=True)
+    --query '{'=': {'name': '%s'}}'" % (alarm_type, alarm_type, threshold, metrics, metrics) \
+                         , stdout=subprocess.PIPE, shell=True)
 
     (output, err) = p.communicate()
 
     if err is None:
         if "Missing value" in output:
             print("Missing value auth-url required for auth plugin password")
-            return 1,''
+            return 1, ''
         else:
             for line in output.splitlines():
                 print(line)
                 if 'alarm_id' in line:
                     id_arr = line.split('|')
                     metric_id = id_arr[2].strip()
-                    print 'Alarm user id is %s!'%metric_id
+                    print 'Alarm user id is %s!' % metric_id
                     return 0, metric_id
             print "Didn't find user_id in the alarm description"
-            return 1,''
-    print "There was a problem with alarm creation: %"%err
+            return 1, ''
+    print "There was a problem with alarm creation: %" % err
     return 1, ''
 
-def create_aodh_composition_alarm(id1, id2):
 
+def create_aodh_composition_alarm(id1, id2):
     print "aodh alarm create \
     --type combination \
     --name 'AClient-Combination-1' \
@@ -689,7 +708,7 @@ def create_aodh_composition_alarm(id1, id2):
     --repeat-actions True \
     --operator or \
     --alarm_ids %s \
-    --alarm_ids %s"%(id1, id2)
+    --alarm_ids %s" % (id1, id2)
 
     p = subprocess.Popen("aodh alarm create \
     --type combination \
@@ -703,15 +722,15 @@ def create_aodh_composition_alarm(id1, id2):
     --repeat-actions True \
     --operator or \
     --alarm_ids %s \
-    --alarm_ids %s"%(id1, id2) \
-    ,stdout=subprocess.PIPE, stderr = subprocess.STDOUT, shell=True)
+    --alarm_ids %s" % (id1, id2) \
+                         , stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
 
     (output, err) = p.communicate()
 
     if err is None:
         if "Missing value" in output:
             print("Missing value auth-url required for auth plugin password")
-            return 1,''
+            return 1, ''
         else:
             for line in output.splitlines():
                 print(line)
@@ -720,43 +739,46 @@ def create_aodh_composition_alarm(id1, id2):
                     return 0
             print "Wrong error type, check it please"
             return 1
-    print "There was a problem with aodh command: %"%err
+    print "There was a problem with aodh command: %" % err
     return 1
+
 
 def show_resource(resource_type, resource_id):
     metric_name = ""
-    if resource_type=="instance":
+    if resource_type == "instance":
         look_for_name = "display_name"
     elif resource_type == 'image':
         look_for_name = "name"
     elif resource_type == "network":
         look_for_name = "instance_network_interface"
-    p = subprocess.Popen("openstack metric resource show --type %s %s" % (resource_type, resource_id), stdout=subprocess.PIPE,
+    p = subprocess.Popen("openstack metric resource show --type %s %s" % (resource_type, resource_id),
+                         stdout=subprocess.PIPE,
                          shell=True)
     (output, err) = p.communicate()
     if err is None:
         if "Missing value" in output:
             print("Missing value auth-url required for auth plugin password")
-            return 1,''
+            return 1, ''
         else:
             for line in output.splitlines():
                 print(line)
                 if look_for_name in line:
-                    #print("Display line: %s"%line)
+                    # print("Display line: %s"%line)
                     id_arr = line.split('|')
                     metric_name = id_arr[2].strip()
     return metric_name
 
 
 def test_values_assigned(resource_id, metric_name):
-    print("openstack metric measures show --aggregation max --resource-id %s %s" % (resource_id,metric_name))
-    p = subprocess.Popen("openstack metric measures show --aggregation max --resource-id %s %s" % (resource_id,metric_name),
-                         stdout=subprocess.PIPE, shell=True)
+    print("openstack metric measures show --aggregation max --resource-id %s %s" % (resource_id, metric_name))
+    p = subprocess.Popen(
+        "openstack metric measures show --aggregation max --resource-id %s %s" % (resource_id, metric_name),
+        stdout=subprocess.PIPE, shell=True)
     (output, err) = p.communicate()
     if err is None:
         if "Missing value" in output:
             print("Missing value auth-url required for auth plugin password")
-            return 1,''
+            return 1, ''
         else:
             for line in output.splitlines():
                 if line == "":
@@ -789,8 +811,10 @@ def check_process(process_name):
         print("No %s in the list" % process_name)
         return 1
 
+
 def check_docker_process(process_name):
-    p = subprocess.Popen('sudo docker ps | grep %s'% process_name,  stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
+    p = subprocess.Popen('sudo docker ps | grep %s' % process_name, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                         shell=True)
     (output, err) = p.communicate()
     if err is None:
         for line in output.splitlines():
@@ -800,6 +824,7 @@ def check_docker_process(process_name):
             else:
                 print("No %s in the list" % process_name)
                 return 1
+
 
 def check_httpd_process(process_name):
     p = subprocess.Popen("systemctl status httpd", stdout=subprocess.PIPE, shell=True)
@@ -813,13 +838,14 @@ def check_httpd_process(process_name):
                 print("No %s in the list" % process_name)
                 return 1
 
+
 def check_openstack_service(service_name, service_type="metric"):
     p = subprocess.Popen("openstack service list", stdout=subprocess.PIPE, shell=True)
     (output, err) = p.communicate()
     if err is None:
         if "Missing value" in output:
             print("Missing value auth-url required for auth plugin password")
-            return 1,''
+            return 1, ''
         else:
             for line in output.splitlines():
                 if service_name in line:
@@ -832,13 +858,14 @@ def check_openstack_service(service_name, service_type="metric"):
                         return 1
     return 2
 
+
 def check_openstack_endpoint(service_name, service_type="metric"):
     p = subprocess.Popen("openstack endpoint list", stdout=subprocess.PIPE, shell=True)
     (output, err) = p.communicate()
     if err is None:
         if "Missing value" in output:
             print("Missing value auth-url required for auth plugin password")
-            return 1,''
+            return 1, ''
         else:
             for line in output.splitlines():
                 if service_name in line:
@@ -858,7 +885,7 @@ def check_openstack_user(user_name):
     if err is None:
         if "Missing value" in output:
             print("Missing value auth-url required for auth plugin password")
-            return 1,''
+            return 1, ''
         else:
             for line in output.splitlines():
                 if user_name in line:
@@ -876,7 +903,7 @@ def check_system_process(process_name):
     if err is None:
         if "Missing value" in output:
             print("Missing value auth-url required for auth plugin password")
-            return 1,''
+            return 1, ''
         else:
             for line in output.splitlines():
                 if flag:
@@ -906,18 +933,19 @@ def edit_pipeline(pipeline_file, edit_fields):
                     return 0
 
     if os.path.isfile(pipeline_file):
-        print("Trying to change %s"%pipeline_file)
+        print("Trying to change %s" % pipeline_file)
         for line in fileinput.input(pipeline_file, inplace=1):
-          if line.startswith('sources'):
-              processing_source = True
-          else:
-            if processing_source:
-              print(edit_fields)
-              processing_source = False
-          print line,
+            if line.startswith('sources'):
+                processing_source = True
+            else:
+                if processing_source:
+                    print(edit_fields)
+                    processing_source = False
+            print line,
     else:
         print("Cannot open %s" % pipeline_file)
     return 0
+
 
 def edit_source(source_file, edit_fields):
     processing_source = False
@@ -929,18 +957,20 @@ def edit_source(source_file, edit_fields):
                     return 0
 
     if os.path.isfile(source_file):
-        print("Trying to change %s"%source_file)
+        print("Trying to change %s" % source_file)
         for line in fileinput.input(source_file, inplace=1):
-          if line.startswith('resources'):
-              processing_source = True
-          else:
-            if processing_source:
-              print(edit_fields)
-              processing_source = False
-          print line,
+            if line.startswith('resources'):
+                processing_source = True
+            else:
+                if processing_source:
+                    print(edit_fields)
+                    processing_source = False
+            print line,
     else:
         print("Cannot open %s" % pipeline_file)
     return 0
+
+
 '''
 def edit_source(source_file, edit_fields):
     if os.path.isfile(source_file):
@@ -957,6 +987,7 @@ def edit_source(source_file, edit_fields):
         print("Cannot open %s" % source_file)
     return 1
 '''
+
 
 def disable_non_metric_meters(value):
     res = 1
@@ -985,16 +1016,20 @@ import subprocess
 
 password_for_sudo = 'redhat'
 
+
 def started_as_root():
     if subprocess.check_output('whoami').strip() == 'root':
         return True
     return False
 
+
 def runing_with_root_privileges():
     print 'i am root'
 
+
 def runing_as_user():
     print 'i am not root'
+
 
 def change_to_root():
     if started_as_root():
@@ -1004,6 +1039,7 @@ def change_to_root():
         print "Need to change to root"
         current_script = os.path.realpath(__file__)
         os.system('echo %s|sudo -S python %s' % (password_for_sudo, current_script))
+
 
 def change_from_root():
     if started_as_root():
