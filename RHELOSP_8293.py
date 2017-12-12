@@ -20,7 +20,7 @@ def RHELOSP_8293_test():
     if res == 1:
         return 1
 
-    out = search_resource(res_type, resource_id)
+    out = search_resource(resource_id, res_type)
     if out[0] != 0:
         print("The resource search is empty!")
         return 1

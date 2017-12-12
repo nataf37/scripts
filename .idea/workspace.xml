@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7b053ac5-d213-422d-8c90-16d7cdc99ecf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/RHELOSP_8293.py" afterPath="$PROJECT_DIR$/RHELOSP_8293.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,8 +40,8 @@
       <file leaf-file-name="RHELOSP_8293.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/RHELOSP_8293.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="35" column="27" lean-forward="false" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+            <state relative-caret-position="374">
+              <caret line="22" column="47" lean-forward="false" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -235,8 +236,8 @@
         <option value="$PROJECT_DIR$/RHELOSP_8277.py" />
         <option value="$PROJECT_DIR$/RHELOSP_8278.py" />
         <option value="$PROJECT_DIR$/RHELOSP_8292.py" />
-        <option value="$PROJECT_DIR$/RHELOSP_8293.py" />
         <option value="$PROJECT_DIR$/check_gnocchi_service.py" />
+        <option value="$PROJECT_DIR$/RHELOSP_8293.py" />
       </list>
     </option>
   </component>
@@ -380,13 +381,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1493805393090</updated>
-    </task>
-    <task id="LOCAL-00033" summary="debugging">
-      <created>1502697281059</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1502697281059</updated>
     </task>
     <task id="LOCAL-00034" summary="debugging">
       <created>1502697764646</created>
@@ -724,7 +718,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513082031501</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="bugfix 8293">
+      <created>1513082036984</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1513082036984</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1183,8 +1184,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/RHELOSP_8293.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="35" column="27" lean-forward="false" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+        <state relative-caret-position="374">
+          <caret line="22" column="47" lean-forward="false" selection-start-line="22" selection-start-column="47" selection-end-line="22" selection-end-column="47" />
           <folding />
         </state>
       </provider>
