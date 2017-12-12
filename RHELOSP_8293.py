@@ -1,6 +1,6 @@
 from check_gnocchi_service import *
 
-def RHELOSP_8292_test():
+def RHELOSP_8293_test():
     out = 1
     res_type = 'image'
 
@@ -29,9 +29,9 @@ def RHELOSP_8292_test():
     return 0
 
 if __name__ == "__main__":
-    res = RHELOSP_8292_test()
+    res = RHELOSP_8293_test()
     if res == 0:
-        print("RHELOSP_8292 Finished successfully")
+        print("RHELOSP_8293 Finished successfully")
     else:
-        print("RHELOSP_8292 failed")
+        print("RHELOSP_8293 failed")
     sys.exit(res)
