@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7b053ac5-d213-422d-8c90-16d7cdc99ecf" name="Default" comment="bugfix 8293">
+    <list default="true" id="7b053ac5-d213-422d-8c90-16d7cdc99ecf" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -384,13 +384,6 @@
       <option name="presentableId" value="Default" />
       <updated>1493805393090</updated>
     </task>
-    <task id="LOCAL-00036" summary="debugging">
-      <created>1502697897590</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1502697897590</updated>
-    </task>
     <task id="LOCAL-00037" summary="debugging-final">
       <created>1502698027918</created>
       <option name="number" value="00037" />
@@ -727,7 +720,14 @@
       <option name="project" value="LOCAL" />
       <updated>1513082252025</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="Latest changes">
+      <created>1516019202760</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1516019202761</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TodoView">
@@ -776,7 +776,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added test 25031" />
     <MESSAGE value="bugfix" />
     <MESSAGE value="more bugfix" />
     <MESSAGE value="debugging" />
@@ -801,7 +800,8 @@
     <MESSAGE value="Added 8278" />
     <MESSAGE value="Added 8293" />
     <MESSAGE value="bugfix 8293" />
-    <option name="LAST_COMMIT_MESSAGE" value="bugfix 8293" />
+    <MESSAGE value="Latest changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Latest changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
