@@ -59,7 +59,7 @@ def create_new_resource(resource_type, resource_name=""):
         if resource_name == "":
             resource_name = "centos-7-image"
         # get image
-        p = subprocess.Popen("wget %s" % image_source, stdout=subprocess.PIPE, shell=True)
+        p = subprocess.Popen("curl - O %s" % image_source, stdout=subprocess.PIPE, shell=True)
         (output, err) = p.communicate()
         if err == None:
             print("source ~/stackrc")
