@@ -45,8 +45,8 @@ def RHELOSP_7043_test():
         return 1
 
     #Wait several polling cycles
-    print('Waiting for instance to update in metric. Need to wait for 1 hour')
-    for i in xrange(60):
+    print('Waiting for instance to update in metric. Need to wait for 5 minutes')
+    for i in xrange(5):
         time.sleep(60)
         print('Waiting for update from nova. %d minutes passed.'%i)
 
