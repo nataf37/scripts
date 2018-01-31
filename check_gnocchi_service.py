@@ -487,7 +487,7 @@ def check_openstack_trait_list():
 def test_new_resource(resource_name, resource_id):
     if resource_name == "network":
         resource_name = 'instance_network_interface'
-    print("openstack metric resource list | grep %s")
+    print("openstack metric resource list | grep %s"%resource_name)
     p = subprocess.Popen("openstack metric resource list | grep %s" % resource_name, stdout=subprocess.PIPE, shell=True)
     (output, err) = p.communicate()
     if err is None:
