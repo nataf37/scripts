@@ -34,7 +34,7 @@ def RHELOSP_6835_test():
     else:
         return 1
 
-    time.sleep(60)
+    time.sleep(300)
 
     #Check that the resource is added to metric list
     res = test_new_resource("instance", resource_id)
