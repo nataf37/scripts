@@ -842,10 +842,12 @@ def check_httpd_process(process_name):
 
 
 def check_openstack_service(service_name, service_type="metric"):
+    print("openstack service list")
     p = subprocess.Popen("openstack service list", stdout=subprocess.PIPE, shell=True)
     (output, err) = p.communicate()
     if err is None:
         if "Missing value" in output:
+            print(output)
             print("Missing value auth-url required for auth plugin password")
             return 1, ''
         else:
