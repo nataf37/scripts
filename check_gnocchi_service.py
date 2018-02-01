@@ -658,7 +658,7 @@ def check_aodh_alarm_list(extracted_alarm):
 
 def create_aodh_alarm(alarm_type, threshold, metrics):
     #    aodh alarm create --name 'MyAlarm' -t 'gnocchi_aggregation_by_metrics_threshold' --aggregation-method 'min' --metric disk.usage --threshold 4.0
-    if alarm_type == "gnocchi_aggregation_by_resources_threshold":
+    if alarm_type == "gnocchi_aggregation_by_resources_threshold" or alarm_type=='gnocchi_resources_threshold':
         query = '{"=": {"name": "%s"}}'%metrics
         print("aodh alarm create \
         --name 'MyAlarm_%s' \
