@@ -658,24 +658,46 @@ def check_aodh_alarm_list(extracted_alarm):
 
 def create_aodh_alarm(alarm_type, threshold, metrics):
     #    aodh alarm create --name 'MyAlarm' -t 'gnocchi_aggregation_by_metrics_threshold' --aggregation-method 'min' --metric disk.usage --threshold 4.0
-    print("aodh alarm create \
-    --name 'MyAlarm_%s' \
-    --type %s \
-    --aggregation-method 'min' \
-    --threshold %f \
-    --resource-type metric \
-    --metrics %s \
-    --query '{'=': {'name': '%s'}}'" % (alarm_type, alarm_type, threshold, metrics, metrics))
+    if alarm_type == "gnocchi_aggregation_by_resources_threshold":
+        query = '{"=": {"name": "%s"}}'%metrics
+        print("aodh alarm create \
+        --name 'MyAlarm_%s' \
+        --type %s \
+        --aggregation-method 'min' \
+        --threshold %f \
+        --resource-type metric \
+        --metric %s \
+        --query '%s'" % (alarm_type, alarm_type, threshold, metrics, query))
 
-    p = subprocess.Popen("aodh alarm create \
-    --name 'MyAlarm_%s' \
-    --type '%s' \
-    --aggregation-method 'min' \
-    --threshold %f \
-    --resource-type metric \
-    --metrics %s \
-    --query '{'=': {'name': '%s'}}'" % (alarm_type, alarm_type, threshold, metrics, metrics) \
-                         , stdout=subprocess.PIPE, shell=True)
+        p = subprocess.Popen("aodh alarm create \
+        --name 'MyAlarm_%s' \
+        --type '%s' \
+        --aggregation-method 'min' \
+        --threshold %f \
+        --resource-type metric \
+        --metric %s \
+        --query '%s'" % (alarm_type, alarm_type, threshold, metrics, query) \
+                             , stdout=subprocess.PIPE, shell=True)
+    else:
+        query = '{"=": {"name": "%s"}}' % metrics
+        print("aodh alarm create \
+        --name 'MyAlarm_%s' \
+        --type %s \
+        --aggregation-method 'min' \
+        --threshold %f \
+        --resource-type metric \
+        --metrics %s \
+        --query '%s'" % (alarm_type, alarm_type, threshold, metrics, query))
+
+        p = subprocess.Popen("aodh alarm create \
+        --name 'MyAlarm_%s' \
+        --type '%s' \
+        --aggregation-method 'min' \
+        --threshold %f \
+        --resource-type metric \
+        --metrics %s \
+        --query '%s'" % (alarm_type, alarm_type, threshold, metrics, query) \
+                             , stdout=subprocess.PIPE, shell=True)
 
     (output, err) = p.communicate()
 
@@ -847,7 +869,7 @@ def check_openstack_service(service_name, service_type="metric"):
     (output, err) = p.communicate()
     if err is None:
         if "Missing value" in output:
-            print(output)
+            print()
             print("Missing value auth-url required for auth plugin password")
             return 1, ''
         else:
