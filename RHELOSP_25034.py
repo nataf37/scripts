@@ -10,6 +10,7 @@ def RHELOSP_25034():
     metrics1 = "disk.usage"
     metrics2 = "disk.capacity"
 
+    #TODO get 2 resource-id and add them to alarm
     out1 = create_aodh_alarm(alarm1, threshold1, metrics1)
     if out1[0] != 0:
         print("Aodh alarm %s 1 couldn't be created!"%alarm1)

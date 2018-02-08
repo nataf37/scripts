@@ -23,7 +23,7 @@ def create_new_resource(resource_type, resource_name=""):
         if res != 1:
             res = create_new_resource("flavor")
             if res != 1:
-
+                print("openstack server create --image centos-7-image --flavor m1.extra_tiny  %s" % resource_name)
                 p = subprocess.Popen(
                     "openstack server create --image centos-7-image --flavor m1.extra_tiny  %s" % resource_name,
                     stdout=subprocess.PIPE, shell=True)
