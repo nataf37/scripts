@@ -1036,6 +1036,21 @@ def disable_non_metric_meters(value):
     print("Couldn't open the %s file" % ceilometer_conf)
     return res
 
+import os
+
+def check_log(service_name, line_to_find):
+    res = 1
+    path = "/var/log/%s"%service_name
+    for logfile in os.listdir(path):
+        if os.path.isfile(logfile):
+            f = open(logfile, 'r+')
+            d = f.readlines()
+            f.seek(0)
+            for i in d:
+                if line_to_find in i:
+                    print ("Found the line in %s log: %s"%(logfile, line_to_find))
+                    res = 0
+    return res
 
 import os.path
 import subprocess
