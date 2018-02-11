@@ -2,7 +2,7 @@ from check_gnocchi_service import *
 def RHELOSP_25472_test():
     out = 1
     line = "Scope(Class[Panko::Api]): This Class is deprecated"
-    logfile = "~/undercloud_install.log"
+    logfile = "/home/stack/undercloud_install.log"
     out = check_log(logfile, line)
     if out == 0:
         print("Found the line in %s logs."% logfile)
