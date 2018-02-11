@@ -5,7 +5,7 @@ def RHELOSP_25472_test():
     logfile = "/home/stack/undercloud_install.log"
     out = check_log(logfile, line)
     if out == 0:
-        print("Found the line in %s logs."% logfile)
+        print("The line is found.")
         out = 0
     else:
         print("Did not find the line in %s logs."% logfile)
