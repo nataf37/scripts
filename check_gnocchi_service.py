@@ -1049,6 +1049,8 @@ def check_log(logfile, line_to_find):
             if line_to_find in i:
                 print ("Found the line in %s log: %s"%(logfile, line_to_find))
                 res = 0
+            else:
+                print i
 
     return res
 
