@@ -1042,6 +1042,7 @@ def check_log(service_name, line_to_find):
     res = 1
     path = "/var/log/%s"%service_name
     for logfile in os.listdir(path):
+        print logfile
         if os.path.isfile(logfile):
             f = open(logfile, 'r+')
             d = f.readlines()
