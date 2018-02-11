@@ -1,5 +1,4 @@
 from check_gnocchi_service import *
-#TODO First switch to instance you need to check
 def RHELOSP_25472_test():
     out = 1
     line = "Scope(Class[Panko::Api]): This Class is deprecated and will be removed in future releases"
