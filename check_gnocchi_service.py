@@ -1042,6 +1042,7 @@ def check_log(logfile, line_to_find):
     res = 1
     print logfile
     if os.path.isfile(logfile):
+        print ("Opening the file: %s"%logfile)
         f = open(logfile, 'r+')
         d = f.readlines()
         f.seek(0)
