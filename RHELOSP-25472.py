@@ -1,7 +1,7 @@
 from check_gnocchi_service import *
 def RHELOSP_25472_test():
     out = 1
-    line = "Scope(Class[Panko::Api]): This Class is deprecated and will be removed in future releases"
+    line = "Scope(Class[Panko::Api]): This Class is deprecated"
     service_name = "gnocchi"
     out = check_log(service_name, line)
     if out == 0:
