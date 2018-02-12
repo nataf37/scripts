@@ -17,7 +17,6 @@ def RHELOSP_25918_test():
                 else:
                     print("There was an error in the log %s!"% logfile)
                     return 1
-
     return out
 
 if __name__ == "__main__":
