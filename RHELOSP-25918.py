@@ -7,6 +7,7 @@ def RHELOSP_25918_test():
     line = "combination"
     for p in path:
         for logfile in os.listdir(p):
+            print logfile
             if os.path.isfile(logfile):
                 out = check_log_for_errors(logfile, line)
                 if out == 0:
