@@ -1069,6 +1069,30 @@ def check_log_for_errors(logfile, line_to_find):
                 return res
     return res
 
+def check_conf(service, line_to_find, value):
+    res = 1
+    conffile = service+".conf"
+    print ("sudo docker exec -ti %s_api cat /etc/%s/%s |grep %s" %(service, service, conffile, line_to_find))
+    p = subprocess.Popen("sudo docker exec -ti %s_api cat /etc/%s/%s |grep %s" %(service, service, conffile, line_to_find), stdout=subprocess.PIPE, shell=True)
+    flag = False
+    (output, err) = p.communicate()
+    if err is None:
+        if "Missing value" in output:
+            print("Missing value auth-url required for auth plugin password")
+            return 1, ''
+        else:
+            for i in output.splitlines():
+                if line_to_find in i:
+                    if value in i:
+                        print ("Found the line in %s file: %s"%(conffile, i))
+                        res = 0
+                        return res
+            print ("Didn't find the value of %s"%line_to_find)
+
+    else:
+         print ("It's not a file!")
+    return res
+
 import os.path
 import subprocess
 
