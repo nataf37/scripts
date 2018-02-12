@@ -7,13 +7,14 @@ def RHELOSP_25918_test():
     line = "combination"
     for p in path:
         for logfile in os.listdir(p):
-            out = check_log_for_errors(logfile, line)
-            if out == 0:
-                print("Log is clear.")
-                out = 0
-            else:
-                print("There was an error in the log %s!"% logfile)
-                return 1
+            if os.path.isfile(logfile):
+                out = check_log_for_errors(logfile, line)
+                if out == 0:
+                    print("Log is clear.")
+                    out = 0
+                else:
+                    print("There was an error in the log %s!"% logfile)
+                    return 1
 
     return out
 
