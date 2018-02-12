@@ -3,7 +3,7 @@ import os
 def RHELOSP_25998_test():
     out = 1
     service = "gnocchi"
-    lines = {"workers":"<number of CPUs>","metric_processing_delay":"30"}
+    lines = {"workers":"4","metric_processing_delay":"30"}
     for l in lines:
         out = check_conf(service, l, lines[l])
         if out == 0:
