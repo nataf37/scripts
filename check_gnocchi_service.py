@@ -1056,7 +1056,7 @@ def check_log(logfile, line_to_find):
 
 def check_log_for_errors(logfile, line_to_find):
     res = 0
-    print logfile
+
     print ("Opening the file: %s"%logfile)
     f = open(logfile, 'r+')
     d = f.readlines()

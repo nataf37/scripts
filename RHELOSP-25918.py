@@ -8,7 +8,6 @@ def RHELOSP_25918_test():
     for p in path:
         for logfile in os.listdir(p):
             logfile=p+logfile
-            print logfile
             if os.path.isfile(logfile):
                 out = check_log_for_errors(logfile, line)
                 if out == 0:
