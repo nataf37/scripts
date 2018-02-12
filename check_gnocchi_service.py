@@ -1052,7 +1052,25 @@ def check_log(logfile, line_to_find):
                 res = 0
     else:
          print ("It's not a file!")
+    return res
 
+def check_log_for_errors(logfile, line_to_find):
+    res = 0
+    print logfile
+    if os.path.isfile(logfile):
+        print ("Opening the file: %s"%logfile)
+        f = open(logfile, 'r+')
+        d = f.readlines()
+        f.seek(0)
+        for i in d:
+            if "ERROR" in i:
+                if line_to_find in i:
+                    print ("Found the line in %s log: %s"%(logfile, line_to_find))
+                    res = 1
+                    return res
+    else:
+        print ("It's not a file!")
+        res = 1
     return res
 
 import os.path
