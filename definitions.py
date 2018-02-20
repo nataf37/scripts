@@ -17,10 +17,12 @@ gnocchi_resources_input = '''
       '''
 instance_values_assigned = ['hardware.cpu.load.1min','hardware.cpu.load.5min','hardware.cpu.load.15min']
 instance_values_assigned_new = ['cpu','vcpus','disk.root.size']
+instance_values_assigned_bug_coverage = ['disk.usage']
 image_value_check = ['image.size']
 instance_value_check = ['vcpus']
 network_value_check=['network.create']
 volume_value_check = ['volume.size']
+mbm_measures = ['memory.bandwidth.total','memory.bandwidth.local']
 
 aodh_alarm_list = ['threshold',
                    'event',
