@@ -996,6 +996,26 @@ def edit_source(source_file, edit_fields):
         print("Cannot open %s" % pipeline_file)
     return 0
 
+def check_conf_file(conf_file, field, value):
+    res = 1
+    print conf_file
+    if os.path.isfile(conf_file):
+        print ("Opening the file: %s"%conf_file)
+        f = open(conf_file, 'r+')
+        d = f.readlines()
+        f.seek(0)
+        for i in d:
+            if field in i:
+                if value in i:
+                    print (i)
+                    res = 0
+                    return res
+        print ("Didn't find the line %s = %s"%(field, value))
+    else:
+         print ("It's not a file!")
+    return res
+
+
 
 '''
 def edit_source(source_file, edit_fields):
