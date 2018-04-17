@@ -1015,7 +1015,25 @@ def check_conf_file(conf_file, field, value):
          print ("It's not a file!")
     return res
 
+def get_node_ip(node_name):
+    res = 1
+    print("source ~/stackrc")
+    p = subprocess.Popen('source ~/stackrc', stdout=subprocess.PIPE, shell=True)
+    (output, err) = p.communicate()
+    if err != None:
+        print("Couldn't find ~/stackrc")
+        print(output)
+        return 1, ''
 
+    #Get the the needed node IP")
+    print('openstack server list -f value | grep %s-0 | cut -d " " -f 4 | cut -d "=" -f 2'%node_name)
+    p = subprocess.Popen('openstack server list -f value | grep %s-0 | cut -d " " -f 4 | cut -d "=" -f 2'%node_name, stdout=subprocess.PIPE, shell=True)
+    (output, err) = p.communicate()
+    if err != None:
+        print("Couldn't get the server IP")
+        print(output)
+        return 1, ''
+    return 0, output
 
 '''
 def edit_source(source_file, edit_fields):
