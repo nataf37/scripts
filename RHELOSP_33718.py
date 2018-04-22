@@ -14,9 +14,6 @@ def RHELOSP_33718_test():
             print ("The process %s doesn't exist!"%pr)
             return 1
 
-
-
-    print('The %s node exists, IP=%s'%(node_name,res[1]))
     return 0
 
 if __name__ == "__main__":
