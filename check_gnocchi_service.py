@@ -6,6 +6,25 @@ import fileinput
 from definitions import *
 import sys
 
+def create_new_project(project_name):
+    res = 1
+    #Look for the project
+    print ('openstack project list')
+    p = subprocess.Popen('openstack project list', stdout=subprocess.PIPE, shell=True)
+    (output, err) = p.communicate()
+    if err is None:
+        if "Missing value" in output:
+            print("Missing value auth-url required for auth plugin password")
+            return 1, ''
+        else:
+            for line in output.splitlines():
+                if project_name in line:
+                    id_arr = line.split('|')
+                    name = id_arr[2].strip()
+                    if name == project_name:
+                        print('The project exists!')
+                        return 0
+            
 
 def create_new_resource(resource_type, resource_name=""):
     if resource_type == "instance":
