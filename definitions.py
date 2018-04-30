@@ -71,7 +71,7 @@ gnocchi_pipeline_network_input = '''
           - meter_sink'''
 
 gnocchi_pipeline_volume_input = '''
-   - name: image_source
+   - name: volume_source
       meters:
           - "volume*"
       sinks:
