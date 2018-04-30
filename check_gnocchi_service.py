@@ -973,7 +973,7 @@ def edit_pipeline(pipeline_file, edit_fields):
     if os.path.isfile(pipeline_file):
         with open(pipeline_file, 'r') as pipefile:
             for line in pipefile:
-                if edit_fields.split('\n')[4] in line:
+                if edit_fields.split('\n')[3] in line:
                     print("The pipeline file already contains the fields")
                     return 0
 
