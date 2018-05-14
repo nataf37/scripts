@@ -622,6 +622,63 @@ def list_resources():
                 print "Problem with openstack metric resource list"
                 return 1
 
+def check_field(field, value):
+    print 'openstack %s list'%field
+    p = subprocess.Popen("openstack %s list"%field, stdout=subprocess.PIPE,
+                         stderr=subprocess.STDOUT, shell=True)
+    (output, err) = p.communicate()
+
+    if err is None:
+        if "Missing value" in output:
+            print("Missing value auth-url required for auth plugin password")
+            return 1, ''
+        else:
+            for line in output.splitlines():
+                # print(line)
+                if value in line:
+                    print 'There is a %s named %s'%(field, value)
+                    return 1, ''
+        print 'There is no %s named %s' % (field, value)
+        return 0,''
+
+    else:
+        print("There was a problem with %s list"%field, err)
+        return 1, ''
+
+
+def build_field(field, value):
+
+    if field == 'project':
+        line = 'openstack %s create --domain default  --description "%s %s" %s'%(field, value, field, value)
+
+    elif field == 'user':
+        line = 'openstack %s create --domain default --password-prompt %s'%(field, value)
+
+    elif field == 'role':
+        line = 'openstack %s create %s'%(field, value)
+
+    p = subprocess.Popen(line, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True)
+    (output, err) = p.communicate()
+
+    if err is None:
+        if "Missing value" in output:
+            print("Missing value auth-url required for auth plugin password")
+            return 1, ''
+        else:
+            for line in output.splitlines():
+                # print(line)
+                if "name" in line:
+                    if value in line:
+                        print 'Created %s named %s'%(field, value)
+                        return 0, ''
+        print 'Could not create a %s named %s' % (field, value)
+        return 1,''
+
+    else:
+        print("There was a problem with %s:"%field, err)
+        return 1, ''
+
+def add_role(project, user, role):
 
 def check_aodh_alarm(outline):
     counter = 0
