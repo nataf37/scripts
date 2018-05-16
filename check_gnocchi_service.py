@@ -636,8 +636,8 @@ def check_field(field, value):
             for line in output.splitlines():
                 # print(line)
                 if value in line:
-                    print 'There is a %s named %s'%(field, value)
-                    return 1, ''
+                    print 'There is already a %s named %s'%(field, value)
+                    return 0, 'Got'
         print 'There is no %s named %s' % (field, value)
         return 0,''
 

@@ -13,20 +13,28 @@ def RHELOSP_34677_test():
         return 1
 
     #2. Create demo project
-    print("Creating %s %s" % (proj_value, field))
-    res = build_field(field, proj_value)
+    if res[1] != 'Got':
+        print("Creating %s %s" % (proj_value, field))
+        res = build_field(field, proj_value)
 
-    if res[0] !=0:
-        return 1
+        if res[0] !=0:
+            return 1
 
-    #3. Create demo user
+    #3.0. Check that there is no demo user
     field = "user"
     user_value = "demo"
-    print("Creating %s %s" % (user_value, field))
-    res = build_field(field, user_value)
+    print("Checking that there is no %s in the list of %s" % (proj_value, field))
+    res = check_field(field, user_value)
 
     if res[0] !=0:
         return 1
+    #3.1. Create demo user
+    if res[1] != 'Got':
+        print("Creating %s %s" % (user_value, field))
+        res = build_field(field, user_value)
+
+        if res[0] !=0:
+            return 1
 
     #4. Create role
     field = "role"
