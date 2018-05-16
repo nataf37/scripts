@@ -1143,6 +1143,18 @@ def change_file(file, field, value):
         return 1, ''
     return 0, ''
 
+def switch_context(context):
+    res = 1
+    line = "source ~/%s"%context
+    print line
+    p = subprocess.Popen(line, stdout=subprocess.PIPE, shell=True)
+    (output, err) = p.communicate()
+    if err != None:
+        print("Couldn't find ~/%s"%context)
+        print(output)
+        return 1, ''
+
+    return 0, output
 
 def get_node_ip(node_name):
     res = 1

@@ -9,6 +9,7 @@ docker_gnocchi="gnocchi_api"
 ceilometer_conf =  "/etc/ceilometer/ceilometer.conf"
 orig_rc="~/overcloudrc"
 demo_rc="~/demorc"
+under_rc="~/stackrc"
 
 gnocchi_resources_input = '''
   - resource_type: generic
