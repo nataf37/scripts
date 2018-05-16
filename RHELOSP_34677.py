@@ -53,6 +53,23 @@ def RHELOSP_34677_test():
     if res[0] == 0:
         return 1
 
+    #7. Create new demorc file, replace pass, project and user to demo
+    res = copy_file(orig_rc, demo_rc)
+    if res[0] !=0:
+        return 1
+
+    res = change_file(demo_rc, 'OS_USER', 'demo')
+    if res[0] !=0:
+        return 1
+
+    res = change_file(demo_rc, 'OS_PASSWORD', 'demo')
+    if res[0] !=0:
+        return 1
+
+    res = change_file(demo_rc, 'OS_PROJECT', 'demo')
+    if res[0] !=0:
+        return 1
+
     return 0
 
 if __name__ == "__main__":

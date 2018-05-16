@@ -1106,6 +1106,44 @@ def check_conf_file(conf_file, field, value):
          print ("It's not a file!")
     return res
 
+def copy_file(orig, copied):
+    #cp opig copied
+
+    line = 'cp %s %s'%(orig, copied)
+    print line
+    p = subprocess.Popen(line, stdout=subprocess.PIPE, shell=True)
+    (output, err) = p.communicate()
+    if err != None:
+        print("Couldn't %"%line)
+        return 1, ''
+
+    return 0,''
+
+def change_file(file, field, value):
+
+    old_value=''
+    #sed -n -e '/POP3_SERVER_NAME/ s/.*\= *//p' test.dat
+    #sed -i 's/original/new/g' file.txt
+    line = "sed -n -e '/%s/ s/.*\= *//p' %s"%(field, file)
+    print line
+    p = subprocess.Popen(line, stdout=subprocess.PIPE, shell=True)
+    (output, err) = p.communicate()
+    if err != None:
+        print("Couldn't %"%line)
+        return 1, ''
+    else:
+        old_value = output
+
+    line = "sed -i 's/%s/%s/g' %s"%(old_value, value, file)
+    print line
+    p = subprocess.Popen(line, stdout=subprocess.PIPE, shell=True)
+    (output, err) = p.communicate()
+    if err != None:
+        print("Couldn't %"%line)
+        return 1, ''
+    return 0, ''
+
+
 def get_node_ip(node_name):
     res = 1
     print("source ~/stackrc")
