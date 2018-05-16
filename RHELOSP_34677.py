@@ -58,7 +58,7 @@ def RHELOSP_34677_test():
     if res[0] !=0:
         return 1
 
-    res = change_file(demo_rc, 'OS_USER', 'demo')
+    res = change_file(demo_rc, 'OS_USERNAME', 'demo')
     if res[0] !=0:
         return 1
 
@@ -66,7 +66,7 @@ def RHELOSP_34677_test():
     if res[0] !=0:
         return 1
 
-    res = change_file(demo_rc, 'OS_PROJECT', 'demo')
+    res = change_file(demo_rc, 'OS_PROJECT_NAME', 'demo')
     if res[0] !=0:
         return 1
 

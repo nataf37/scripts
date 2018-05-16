@@ -1132,7 +1132,7 @@ def change_file(file, field, value):
         print("Couldn't %"%line)
         return 1, ''
     else:
-        old_value = output
+        old_value = output.splitlines()[0]
 
     line = "sed -i 's/%s/%s/g' %s"%(old_value, value, file)
     print line
