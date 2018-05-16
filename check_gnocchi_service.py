@@ -652,7 +652,7 @@ def build_field(field, value):
         line = 'openstack %s create --domain default  --description "%s %s" %s'%(field, value, field, value)
 
     elif field == 'user':
-        line = 'openstack %s create --domain default --password-prompt %s'%(field, value)
+        line = 'openstack %s create --domain default --password %s %s'%(field, value, value)
 
     elif field == 'role':
         line = 'openstack %s create %s'%(field, value)
