@@ -58,7 +58,7 @@ def RHELOSP_34677_test():
     print("Checking that there is %s in the list of %s" % (proj_value, field))
     res = check_field(field, proj_value)
 
-    if res[0] == 0:
+    if res[0] != 0:
         return 1
 
     #7. Create new demorc file, replace pass, project and user to demo
