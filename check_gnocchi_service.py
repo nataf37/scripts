@@ -210,6 +210,62 @@ def create_new_resource(resource_type, resource_name=""):
         print("Not known resource %s" % resource_type)
         return 1, ''
 
+def get_resource_id(type, name):
+    res = 1
+    ind=""
+    l = "openstack %s list"%type
+    print l
+    p = subprocess.Popen(l, stdout=subprocess.PIPE, shell=True)
+    (output, err) = p.communicate()
+    if err is None:
+        if "Missing value" in output:
+            print("Missing value auth-url required for auth plugin password")
+            return 1, ''
+        else:
+            for line in output.splitlines():
+                arr = line.split("|").strip()
+                if arr[2]==name:
+                    ind = arr[1]
+                    return 0, ind
+            else:
+                print("Didn't find %s in %s list" %(name,type))
+                return 1, ''
+    else:
+        print("Error listing %s"%type)
+        return 1, ''
+
+
+def find_metrics(user_id, type):
+    res = 1
+    type_found=False
+    l = "openstack metrics resource list"
+    print l
+    p = subprocess.Popen(l, stdout=subprocess.PIPE, shell=True)
+    (output, err) = p.communicate()
+    if err is None:
+        if "Missing value" in output:
+            print("Missing value auth-url required for auth plugin password")
+            return 1, ''
+        else:
+            for line in output.splitlines():
+                type_found = True
+                if type in line:
+                    if user_id in line:
+                        print line
+                        return 0, 'Found'
+
+            if type_found:
+                return 0, 'Not found'
+            else:
+                print "Didn't find the type %s in resource list!"%type
+                return 1, ''
+
+    else:
+        print err
+        return 1, ''
+
+
+
 
 def alarm_type_exists(alarm_type):
     print("ceilometer help")
