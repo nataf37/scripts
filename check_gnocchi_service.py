@@ -954,12 +954,12 @@ def test_values_assigned(resource_id, metric_name):
             for line in output.splitlines():
                 if line == "":
                     print("No measures of %s" % metric_name)
-                    return 1
+                    return 1,''
                 else:
                     print("Found measures for %s" % metric_name)
-                    return 0
+                    return 0, ''
     print("Problem getting measures for %s" % resource_id)
-    return 1
+    return 1,err
 
 
 def restart_process(process_name):

@@ -22,7 +22,7 @@ def RHELOSP_6835_bug_coverage_test():
     #Check the measures of the resource
     for val in instance_values_assigned_bug_coverage:
         res = test_values_assigned(resource_id,val)
-        if res != 0:
+        if res[0] != 0:
             return 1
 
     return 0

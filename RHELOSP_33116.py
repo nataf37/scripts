@@ -22,7 +22,7 @@ def RHELOSP_33116_test():
     #Check the memory bandwidth measures of the resource
     for val in mbm_measures:
         res = test_values_assigned(resource_id,val)
-        if res == 0:
+        if res[0] == 0:
             print("The measures aren't supposed to be there!")
             return 1
 

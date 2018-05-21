@@ -26,7 +26,7 @@ def RHELOSP_34678_test():
     # Check the measures of the resource
     for val in image_value_check:
         res = test_values_assigned(resource_id, val)
-        if res != 0:
+        if res[0] != 0:
             return 1
 
     return 0
