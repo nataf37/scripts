@@ -23,7 +23,7 @@ def RHELOSP_34677_test():
     #3.0. Check that there is no demo user
     field = "user"
     user_value = "demo"
-    print("Checking that there is no %s in the list of %s" % (proj_value, field))
+    print("Checking that there is no %s in the list of %s" % (user_value, field))
     res = check_field(field, user_value)
 
     if res[0] !=0:
