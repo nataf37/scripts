@@ -10,6 +10,7 @@ ceilometer_conf =  "/etc/ceilometer/ceilometer.conf"
 orig_rc="~/overcloudrc"
 demo_rc="~/demorc"
 demo2_rc="~/demo2rc"
+test_rc="~/testrc"
 under_rc="~/stackrc"
 
 gnocchi_resources_input = '''

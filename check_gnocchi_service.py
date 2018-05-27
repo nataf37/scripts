@@ -608,13 +608,13 @@ def search_resource(resource_id, resource_name):
                         print("The resource %s is in metric list" % resource_name)
                         return 0, ''
             print("The resource %s is not found in metric list" % resource_id)
-            return 1, ''
+            return 1, 'Not found'
 
         print("The resource %s is not found in metric list" % resource_name)
-        return 1, ''
+        return 1, 'Not found'
 
     print('Problem with openstack metric resource list')
-    return 1, ''
+    return 1, 'Not found'
 
 
 def remove_resource(resource_id, resource_name):
@@ -670,13 +670,21 @@ def list_resources():
             print("Missing value auth-url required for auth plugin password")
             return 1, ''
         else:
-            if len(output.splitlines()) > 4:
-                for line in output.splitlines():
+            out = output.splitlines()
+            if len(out) > 4:
+                for line in out:
                     print line
-                return 0
+                return 0, ''
             else:
-                print "Problem with openstack metric resource list"
-                return 1
+                if len(out) == 4:
+                    for line in out:
+                        print line
+                    print 'The list is empty'
+                    return 1, 'Empty'
+                else:
+                    print "Problem with openstack metric resource list"
+                    return 1, ''
+
 
 def check_field(field, value):
     print 'openstack %s list'%field
