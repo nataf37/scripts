@@ -969,6 +969,28 @@ def test_values_assigned(resource_id, metric_name):
     print("Problem getting measures for %s" % resource_id)
     return 1,err
 
+def get_measures(resource_id, metric_name):
+    print("openstack metric measures show --aggregation max --resource-id %s %s" % (resource_id, metric_name))
+    p = subprocess.Popen(
+        "openstack metric measures show --aggregation max --resource-id %s %s" % (resource_id, metric_name),
+        stdout=subprocess.PIPE, shell=True)
+    (output, err) = p.communicate()
+    if err is None:
+        if "Missing value" in output:
+            print("Missing value auth-url required for auth plugin password")
+            return 1, ''
+        else:
+            for line in output.splitlines():
+                if line == "":
+                    print("No measures of %s" % metric_name)
+                    return 1,''
+                else:
+                    if '201' in line:
+                        print ('Measures found:')
+                        print line
+                        return 0, line
+    print("Problem getting measures for %s" % resource_id)
+    return 1,err
 
 def restart_process(process_name):
     p = subprocess.Popen("sudo -S systemctl restart %s" % process_name, stdout=subprocess.PIPE, shell=True)
@@ -1004,6 +1026,18 @@ def check_docker_process(process_name):
                 print("No %s in the list" % process_name)
                 return 1
 
+def restart_docker_process(process_name):
+    p = subprocess.Popen('sudo docker restart %s' % process_name, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+                         shell=True)
+    (output, err) = p.communicate()
+    if err is None:
+        for line in output.splitlines():
+            if process_name in line:
+                print(line)
+                return 0
+            else:
+                print("No %s in the list" % process_name)
+                return 1
 
 def check_httpd_process(process_name):
     p = subprocess.Popen("systemctl status httpd", stdout=subprocess.PIPE, shell=True)
@@ -1169,6 +1203,23 @@ def check_conf_file(conf_file, field, value):
     else:
          print ("It's not a file!")
     return res
+
+def check_docker_conf_file(service, file, field, value):
+    res = 1
+    input = "sudo docker exec -ti %s cat %s | grep %s"%(service, file, field)
+    print input
+    p = subprocess.Popen(input, stdout=subprocess.PIPE, shell=True)
+    (output, err) = p.communicate()
+    if err is None:
+        for line in output.splitlines():
+            if field in line:
+                if value in line:
+                    print(line)
+                    res = 0
+                    return res, ''
+    else:
+        print("Line %s = %s not found" %(field, value))
+        return 1, ''
 
 def copy_file(orig, copied):
     #cp opig copied
