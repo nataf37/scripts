@@ -4,9 +4,9 @@ def RHELOSP_34679_test():
     res = 1
 
     #0. Operate under demo user
-    res = switch_context(demo_rc)
-    if res != 0:
-        return 1
+    #res = switch_context(demo_rc)
+    #if res != 0:
+    #    return 1
 
     #1. Create new instance
     res, id = create_new_resource("instance", "DemoInstance")
