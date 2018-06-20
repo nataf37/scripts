@@ -1260,12 +1260,12 @@ def change_file(file, field, value):
 
 def switch_context(context):
     res = 1
-    line = "source ~/%s"%context
+    line = "source %s"%context
     print line
     p = subprocess.Popen(line, stdout=subprocess.PIPE, shell=True)
     (output, err) = p.communicate()
     if err != None:
-        print("Couldn't find ~/%s"%context)
+        print("Couldn't find %s"%context)
         print(output)
         return 1, ''
 
