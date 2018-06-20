@@ -4,9 +4,9 @@ def RHELOSP_34678_test():
     res = 1
 
     #0. Operate under admin user
-    res = switch_context(orig_rc)
-    if res != 0:
-        return 1
+    #res = switch_context(orig_rc)
+    #if res != 0:
+    #    return 1
 
     #1. Create new image
     res, id = create_new_resource("image", "AdminImage")
