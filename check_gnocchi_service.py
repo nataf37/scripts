@@ -686,6 +686,7 @@ def list_resources():
                     return 1, ''
 
 
+
 def check_field(field, value):
     print 'openstack %s list'%field
     p = subprocess.Popen("openstack %s list"%field, stdout=subprocess.PIPE,
