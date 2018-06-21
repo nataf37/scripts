@@ -19,7 +19,7 @@ def RHELOSP_24699_test():
         return 1
 
     out = list_resources()
-    if out != 0:
+    if out[0] != 0:
         print("Gnocchi resource list is not found!")
         return 1
 

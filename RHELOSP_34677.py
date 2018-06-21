@@ -46,7 +46,7 @@ def RHELOSP_34677_test():
         return 1
 
     #5. Add demo to user role
-    role = "user"
+    role = "demo"
     res = add_role(proj_value, user_value, role)
 
     if res[0] !=0:
