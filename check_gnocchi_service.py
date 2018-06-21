@@ -685,8 +685,6 @@ def list_resources():
                     print "Problem with openstack metric resource list"
                     return 1, ''
 
-    return 0, ''
-
 
 def check_field(field, value):
     print 'openstack %s list'%field
