@@ -23,7 +23,7 @@ def RHELOSP_24699_test():
         print("Gnocchi resource list is not found!")
         return 1
 
-    return out
+    return 0
 
 if __name__ == "__main__":
     res = RHELOSP_24699_test()
