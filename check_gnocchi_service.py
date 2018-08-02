@@ -81,13 +81,6 @@ def create_new_resource(resource_type, resource_name=""):
         p = subprocess.Popen("curl -O %s" % image_source, stdout=subprocess.PIPE, shell=True)
         (output, err) = p.communicate()
         if err == None:
-            print("source ~/stackrc")
-            p1 = subprocess.Popen('source ~/stackrc', stdout=subprocess.PIPE, shell=True)
-            (output, err) = p1.communicate()
-            if err != None:
-                print("Couldn't find ~/stackrc")
-                print(output)
-                return 1, ''
 
             (res, metric_id) = resource_exists('image', resource_name)
             if res == 0:
