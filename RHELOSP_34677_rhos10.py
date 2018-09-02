@@ -5,7 +5,7 @@ def RHELOSP_34677_test():
 
     #1. Check that there is no demo project
     field = "project"
-    proj_value = "demo"
+    proj_value = "admin"
     print("Checking that there is no %s in the list of %s" % (proj_value, field))
     res = check_field(field, proj_value)
 
