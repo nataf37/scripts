@@ -36,7 +36,7 @@ def RHELOSP_39201_test():
     if res != 0:
         return 1
     else:
-        print ("Metric %s timestamp is %s"%(param_name, timestamp))
+        print ("Metric %s timestamp is %s"%(gnocchi_param_name, timestamp))
     return 0
 
 if __name__ == "__main__":
