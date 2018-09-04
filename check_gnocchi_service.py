@@ -649,7 +649,7 @@ def check_resource_param(res_type, resource_id, param_name):
                 print(line)
                 if param_name in line:
                     id_arr = line.split('|')
-                    timestamp = id_arr[1].strip()
+                    timestamp = id_arr[2].strip()
                     return 0, timestamp
 
         print("The resource %s is not found in %s list" %(res_type, resource_id))

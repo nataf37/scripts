@@ -32,7 +32,7 @@ def RHELOSP_39201_test():
     # Check the time of creation in gnocchi
 
     gnocchi_param_name = 'started_at'
-    res, timestamp = check_gnocchi_resource_param(resource_id, param_name)
+    res, timestamp = check_gnocchi_resource_param(resource_id, gnocchi_param_name)
     if res != 0:
         return 1
     else:
