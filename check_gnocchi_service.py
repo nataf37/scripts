@@ -392,9 +392,35 @@ def ceilometer_filter_by_event_type(event_name):
         print("Problem with event-list")
         return 1, ''
 
+def event_show(event_name):
+    printline = "ceilometer event-list -q 'event_type=%s'" % event_name
+    print printline
+    p = subprocess.Popen(printline, stdout=subprocess.PIPE, shell=True)
+    (output1, err1) = p.communicate()
+    if err1 is None:
+        if "Missing value" in output1:
+            print("Missing value auth-url required for auth plugin password")
+            return 1, ''
+        else:
+            for line1 in output1.splitlines():
+                print(line1)
+                if event_name in line1:
+                    id_arr1 = line1.split('|')
+                    ev_type = id_arr1[2].strip()
+                    ev_id = id_arr1[1].strip()
+                    if event_name in ev_type:
+                        print('Event %s exists' % event_name)
+                        return 0, ev_id
+            print("Didn't find event_type %s " % event_name)
+            return 1, ''
+    else:
+        print("Problem with event-list")
+        return 1, ''
 
-def ceilometer_filter_by_trait(event_name):
-    trait = 'service'
+
+
+def ceilometer_filter_by_trait(event_name, trait='service'):
+
     print('ceilometer trait-list  -e %s -t %s' % (event_name, trait))
     p = subprocess.Popen('ceilometer trait-list  -e %s -t %s' % (event_name, trait), stdout=subprocess.PIPE, shell=True)
     (output1, err1) = p.communicate()
@@ -408,9 +434,10 @@ def ceilometer_filter_by_trait(event_name):
                 if trait in line1:
                     id_arr1 = line1.split('|')
                     ev_type = id_arr1[1].strip()
+                    trait_val = id_arr1[2].strip()
                     if trait in ev_type:
                         print('Trait %s exists' % trait)
-                        return 0, ''
+                        return 0, trait_val
             print("Didn't find trait %s " % trait)
             return 1, ''
     else:
@@ -509,9 +536,8 @@ def gnocchi_archive_policy_show(event_name):
         return 1, ''
 
 
-def check_openstack_event_type_list():
+def check_openstack_event_type_list(event_name="image.update"):
     print("ceilometer event-type-list")
-    event_name = "image.update"
     p = subprocess.Popen("ceilometer event-type-list", stdout=subprocess.PIPE, shell=True)
     (output, err) = p.communicate()
     if err is None:
@@ -604,6 +630,52 @@ def search_resource(resource_id, resource_name):
             return 1, 'Not found'
 
         print("The resource %s is not found in metric list" % resource_name)
+        return 1, 'Not found'
+
+    print('Problem with openstack metric resource list')
+    return 1, 'Not found'
+
+def check_resource_param(res_type, resource_id, param_name):
+    input_line = 'openstack %s show -c %s %s'%(res_type, param_name, resource_id)
+    print(input_line)
+    p = subprocess.Popen(input_line, stdout=subprocess.PIPE, shell=True)
+    (output, err) = p.communicate()
+    if err is None:
+        if "Missing value" in output:
+            print("Missing value auth-url required for auth plugin password")
+            return 1, ''
+        else:
+            for line in output.splitlines():
+                print(line)
+                if param_name in line:
+                    id_arr = line.split('|')
+                    timestamp = id_arr[1].strip()
+                    return 0, timestamp
+
+        print("The resource %s is not found in %s list" %(res_type, resource_id))
+        return 1, 'Not found'
+
+    print('Problem with openstack metric resource list')
+    return 1, 'Not found'
+
+def check_gnocchi_resource_param(resource_id, param_name):
+    input_line = 'openstack metric resource show -c %s %s'%(param_name, resource_id)
+    print(input_line)
+    p = subprocess.Popen(input_line, stdout=subprocess.PIPE, shell=True)
+    (output, err) = p.communicate()
+    if err is None:
+        if "Missing value" in output:
+            print("Missing value auth-url required for auth plugin password")
+            return 1, ''
+        else:
+            for line in output.splitlines():
+                print(line)
+                if param_name in line:
+                    id_arr = line.split('|')
+                    timestamp = id_arr[1].strip()
+                    return 0, timestamp
+
+        print("The resource %s is not found in metric list" % resource_id)
         return 1, 'Not found'
 
     print('Problem with openstack metric resource list')
