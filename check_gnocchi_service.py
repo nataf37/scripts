@@ -652,6 +652,7 @@ def check_resource_param(res_type, resource_id, param_name):
                     timestamp = id_arr[2].strip()
                     return 0, timestamp
 
+
         print("The resource %s is not found in %s list" %(res_type, resource_id))
         return 1, 'Not found'
 
