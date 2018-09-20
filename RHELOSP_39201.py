@@ -1,6 +1,6 @@
 from check_gnocchi_service import *
 
-def RHELOSP_39201_test():
+def RHELOSP_39203_test():
     res = 1
 
     # Create new volume: 1
@@ -40,9 +40,9 @@ def RHELOSP_39201_test():
     return 0
 
 if __name__ == "__main__":
-    res = RHELOSP_39201_test()
+    res = RHELOSP_39203_test()
     if res == 0:
-        print("RHELOSP_39201_test Finished successfully")
+        print("RHELOSP_39203_test Finished successfully")
     else:
-        print("RHELOSP_39201_test failed")
+        print("RHELOSP_39203_test failed")
     sys.exit(res)

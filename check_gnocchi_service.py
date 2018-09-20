@@ -42,7 +42,7 @@ def create_new_resource(resource_type, resource_name=""):
         if res != 1:
             res = create_new_resource("flavor")
             if res != 1:
-                print("openstack server create --image centos-7-image --flavor m1.extra_tiny  %s" % resource_name)
+                print("   %s" % resource_name)
                 p = subprocess.Popen(
                     "openstack server create --image centos-7-image --flavor m1.extra_tiny  %s" % resource_name,
                     stdout=subprocess.PIPE, shell=True)
@@ -632,7 +632,7 @@ def search_resource(resource_id, resource_name):
         print("The resource %s is not found in metric list" % resource_name)
         return 1, 'Not found'
 
-    print('Problem with openstack metric resource list')
+    print('Problem with openstack metric resource search')
     return 1, 'Not found'
 
 def check_resource_param(res_type, resource_id, param_name):
@@ -656,7 +656,7 @@ def check_resource_param(res_type, resource_id, param_name):
         print("The resource %s is not found in %s list" %(res_type, resource_id))
         return 1, 'Not found'
 
-    print('Problem with openstack metric resource list')
+    print('Problem with %s'%input_line)
     return 1, 'Not found'
 
 def check_gnocchi_resource_param(resource_id, param_name):
@@ -679,7 +679,7 @@ def check_gnocchi_resource_param(resource_id, param_name):
         print("The resource %s is not found in metric list" % resource_id)
         return 1, 'Not found'
 
-    print('Problem with openstack metric resource list')
+    print('Problem with openstack metric resource show')
     return 1, 'Not found'
 
 
