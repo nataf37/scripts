@@ -725,6 +725,22 @@ def find_resources(resource_name):
                     resource_list.append(metric_id)
     return resource_list
 
+def find_resource_by_id(resource_id):
+
+    input_line="openstack metric resource list | grep %s" % resource_id
+    print(input_line)
+    p = subprocess.Popen(input_line, stdout=subprocess.PIPE, shell=True)
+    (output, err) = p.communicate()
+    if err is None:
+        if "Missing value" in output:
+            print("Missing value auth-url required for auth plugin password")
+            return 1, ''
+        else:
+            for line in output.splitlines():
+                if resource_id in line:
+                    print('The resource is in the list')
+                    return 0
+    return 1
 
 def list_resources():
     resource_list = []
