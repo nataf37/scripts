@@ -4,8 +4,7 @@ def RHELOSP_6841_test():
     res = 1
 
     # Create new image
-    res_name = str(int(1000.0 * random()))
-    res, id = create_new_resource("image", res_name)
+    res, id = create_new_resource("image")
     if res != 1:
         resource_id = id
         res = 0
