@@ -1069,10 +1069,14 @@ def show_resource(resource_type, resource_id):
     return metric_name
 
 
-def test_values_assigned(resource_id, metric_name):
-    print("openstack metric measures show --aggregation max --resource-id %s %s" % (resource_id, metric_name))
+def test_values_assigned(resource_id, metric_name, aggregation_type=''):
+    if aggregation_type != '':
+        agg_type='--aggregation %s'%aggregation_type
+    else:
+        agg_type = ''
+    input_line = "openstack metric measures show %s --resource-id %s %s" % (agg_type, resource_id, metric_name)
     p = subprocess.Popen(
-        "openstack metric measures show --aggregation max --resource-id %s %s" % (resource_id, metric_name),
+        input_line,
         stdout=subprocess.PIPE, shell=True)
     (output, err) = p.communicate()
     if err is None:
@@ -1090,10 +1094,13 @@ def test_values_assigned(resource_id, metric_name):
     print("Problem getting measures for %s" % resource_id)
     return 1,err
 
-def get_measures(resource_id, metric_name):
-    print("openstack metric measures show --aggregation max --resource-id %s %s" % (resource_id, metric_name))
-    p = subprocess.Popen(
-        "openstack metric measures show --aggregation max --resource-id %s %s" % (resource_id, metric_name),
+def get_measures(resource_id, metric_name, aggregation_type=''):
+    if aggregation_type != '':
+        agg_type='--aggregation %s'%aggregation_type
+    else:
+        agg_type = ''
+    input_line ="openstack metric measures show %s --resource-id %s %s" % (agg_type, resource_id, metric_name)
+    p = subprocess.Popen(input_line,
         stdout=subprocess.PIPE, shell=True)
     (output, err) = p.communicate()
     if err is None:

@@ -19,9 +19,16 @@ def RHELOSP_6841_test():
     if res != 0:
         return 1
 
-    # Check the measures of the resource
+    # Check the measures of the resource without aggregation
     for val in image_value_check:
         res = test_values_assigned(resource_id, val)
+        if res[0] != 0:
+            return 1
+
+    # Check the measures of the resource with aggregation
+    agg_type = 'mean'
+    for val in image_value_check:
+        res = test_values_assigned(resource_id, val, agg_type)
         if res[0] != 0:
             return 1
 
