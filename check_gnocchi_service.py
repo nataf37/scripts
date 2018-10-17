@@ -1075,6 +1075,7 @@ def test_values_assigned(resource_id, metric_name, aggregation_type=''):
     else:
         agg_type = ''
     input_line = "openstack metric measures show %s --resource-id %s %s" % (agg_type, resource_id, metric_name)
+    print(input_line)
     p = subprocess.Popen(
         input_line,
         stdout=subprocess.PIPE, shell=True)
@@ -1100,6 +1101,7 @@ def get_measures(resource_id, metric_name, aggregation_type=''):
     else:
         agg_type = ''
     input_line ="openstack metric measures show %s --resource-id %s %s" % (agg_type, resource_id, metric_name)
+    print(input_line)
     p = subprocess.Popen(input_line,
         stdout=subprocess.PIPE, shell=True)
     (output, err) = p.communicate()
