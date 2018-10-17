@@ -5,6 +5,7 @@ import time
 import fileinput
 from definitions import *
 import sys
+from numpy.random import random
 
 def create_new_project(project_name):
     res = 1

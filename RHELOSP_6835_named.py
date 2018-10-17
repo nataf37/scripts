@@ -1,4 +1,3 @@
-from numpy.random import random
 from check_gnocchi_service import *
 
 def RHELOSP_6835_test():
