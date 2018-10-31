@@ -237,7 +237,7 @@ def get_resource_id(type, name):
 def find_metrics(user_id, type):
     res = 1
     type_found=False
-    l = "openstack metrics resource list"
+    l = "openstack metric resource list"
     print l
     p = subprocess.Popen(l, stdout=subprocess.PIPE, shell=True)
     (output, err) = p.communicate()
@@ -1555,6 +1555,51 @@ def change_from_root():
     else:
         runing_as_user()
 
+def get_met_list(met_list):
+    input_line ="openstack metric list"
+    print(input_line)
+    p = subprocess.Popen(input_line,
+        stdout=subprocess.PIPE, shell=True)
+    (output, err) = p.communicate()
+    if err is None:
+        if "Missing value" in output:
+            print("Missing value auth-url required for auth plugin password")
+            return 1, ''
+        else:
+            for line in output.splitlines():
+                if line == "":
+                    print("No metrics found")
+                    return 1,''
+                else:
+                    if 'ceilo' in line:
+                        id = line.split('|')[1].strip()
+                        print ('Metric found: %s'%id)
+                        met_list.append(id)
+                    if '+-' in line and len(met_list)>0:
+                        return 0
+    return 0
+
+def get_measures_by_id(met_id):
+    input_line = "openstack metric measures show %s " % (met_id)
+    print(input_line)
+    p = subprocess.Popen(
+        input_line,
+        stdout=subprocess.PIPE, shell=True)
+    (output, err) = p.communicate()
+    if err is None:
+        if "Missing value" in output:
+            print("Missing value auth-url required for auth plugin password")
+            return 1, ''
+        else:
+            for line in output.splitlines():
+                if line == "":
+                    print("No measures of %s" % met_id)
+                    return 1,''
+                else:
+                    print("Found measures for %s" % met_id)
+                    return 0, ''
+    print("Problem getting measures for %s" % met_id)
+    return 1,err
 
 if __name__ == '__main__':
     change_to_root()
