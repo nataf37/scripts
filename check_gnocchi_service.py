@@ -731,6 +731,23 @@ def find_resources(resource_name):
                     resource_list.append(metric_id)
     return resource_list
 
+def find_resource_type(resource_type):
+    resource_list = []
+    p = subprocess.Popen("openstack metric resource list --type %s" % resource_type, stdout=subprocess.PIPE, shell=True)
+    (output, err) = p.communicate()
+    if err is None:
+        if "Missing value" in output:
+            print("Missing value auth-url required for auth plugin password")
+            return 1, ''
+        else:
+            for line in output.splitlines():
+                print(line)
+                if resource_type in line:
+                    id_arr = line.split('|')
+                    metric_id = id_arr[1].strip()
+                    resource_list.append(metric_id)
+    return resource_list
+
 def find_resource_by_id(resource_id):
 
     input_line="openstack metric resource list | grep %s" % resource_id

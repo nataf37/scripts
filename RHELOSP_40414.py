@@ -7,7 +7,7 @@ def RHELOSP_40414_test():
     #Test cpu metric measures from gnocchi
     #1. Find instance, get it's id
     ins_id = "0"
-    instance_list = find_resources('instance')
+    instance_list = find_resource_type('instance')
     if instance_list == []:
         return 1
     else:
