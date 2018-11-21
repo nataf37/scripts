@@ -1086,7 +1086,7 @@ def show_resource(resource_type, resource_id):
     return metric_name
 
 
-    def test_values_assigned(resource_id, metric_name, aggregation_type=''):
+def test_values_assigned(resource_id, metric_name, aggregation_type=''):
     if aggregation_type != '':
         agg_type='--aggregation %s'%aggregation_type
     else:
