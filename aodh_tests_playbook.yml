@@ -1,0 +1,71 @@
+#!/usr/bin/env ansible-playbook
+---
+- name: Undercloud part of aodh testing
+  hosts: undercloud-0
+  tasks:
+    - name: Clone git repo to undercloud
+      git:
+        repo: "https://github.com/sashkavyshka/gnocchi_auto.git"
+        dest: "~/gnocchi_auto"
+
+    - name: Copy overcloudrc to controller
+      shell: |
+        source ~/stackrc
+        ssh-keyscan $(openstack server list -f value | grep controller-0 | cut -d " " -f 4 | cut -d "=" -f 2) >  ~/.ssh/known_hosts
+        scp overcloudrc heat-admin@$(openstack server list -f value | grep controller-0 | cut -d " " -f 4 | cut -d "=" -f 2):stackrc
+
+- name: Tests on controller
+  hosts: controller-0
+
+  tasks:
+    - name: Clone git repo to controller
+      git:
+        repo: "https://github.com/sashkavyshka/gnocchi_auto.git"
+        dest: "~/gnocchi_auto"
+
+    - name: Change permissions
+      file:
+        path: gnocchi_auto
+        mode: 0770
+
+    - name: Run python tests on overcloud
+      shell: |
+        source ~/overcloudrc;
+        echo -n "RHELOSP_8274 " >> output.txt;
+        python gnocchi_auto/RHELOSP_8274_8275.py;
+        out=$(echo $?);
+        if [out=0]; then
+            echo "deployment completed" > /tmp/RHELOSP-8274;
+            echo "deployment completed" > /tmp/RHELOSP-8275;
+        fi
+
+        python gnocchi_auto/RHELOSP_8276.py;
+        out=$(echo $?);
+        if [out=0]; then
+            echo "deployment completed" > /tmp/RHELOSP-8276;
+        fi
+        python gnocchi_auto/RHELOSP_8277.py;
+        out=$(echo $?);
+        if [out=0]; then
+            echo "deployment completed" > /tmp/RHELOSP-8277;
+        fi
+        python gnocchi_auto/RHELOSP_25031.py;
+        out=$(echo $?);
+        if [out=0]; then
+            echo "deployment completed" > /tmp/RHELOSP-25031;
+        fi
+        python gnocchi_auto/RHELOSP_25032.py;
+        out=$(echo $?);
+        if [out=0]; then
+            echo "deployment completed" > /tmp/RHELOSP-25032;
+        fi
+        python gnocchi_auto/RHELOSP_25033.py;
+        out=$(echo $?);
+        if [out=0]; then
+            echo "deployment completed" > /tmp/RHELOSP-25033;
+        fi
+        python gnocchi_auto/RHELOSP_25034.py;
+        out=$(echo $?);
+        if [out=0]; then
+            echo "deployment completed" > /tmp/RHELOSP-25034;
+        fi

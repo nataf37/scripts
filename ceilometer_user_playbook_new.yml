@@ -1,0 +1,29 @@
+#!/usr/bin/env ansible-playbook
+---
+- name: Undercloud part of gnocchi testing
+  hosts: localhost
+  tasks:
+      - name: Clone git repo to undercloud
+        git:
+          repo: "https://github.com/sashkavyshka/gnocchi_auto.git"
+          dest: "~/gnocchi_auto"
+
+      - name: Change permissions
+        file:
+          path: gnocchi_auto
+          mode: 0770
+
+      - name: Run Ceilometer user on overcloud
+        shell: |
+          source ~/overcloudrc.v3;
+          python gnocchi_auto/RHELOSP_24695.py;
+          python gnocchi_auto/RHELOSP_24696.py;
+          python gnocchi_auto/RHELOSP_24699.py;
+          python gnocchi_auto/RHELOSP_34678.py;
+          python gnocchi_auto/RHELOSP_34678.py;
+          python gnocchi_auto/RHELOSP_34679.py;
+          python gnocchi_auto/RHELOSP_34680.py;
+          python gnocchi_auto/RHELOSP_34681.py;
+          python gnocchi_auto/RHELOSP_34687.py;
+          python gnocchi_auto/RHELOSP_34688.py;
+
