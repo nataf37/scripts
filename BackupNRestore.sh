@@ -3,14 +3,10 @@
 #This script should be run under root user
 #This script should be run from the hypervisor
 
-def login()
-
-
-
-def backup(){
+backup(){
 
 ssh undercloud-0 " 
-yum install mariadb;
+yum -y install mariadb ;
 cp /var/lib/config-data/puppet-generated/mysql/root/.my.cnf .;
 mkdir /backup;
 chown stack: /backup;
@@ -30,12 +26,12 @@ tar --xattrs --ignore-failed-read -vcf \
 "
 }
 
-def restore()
+restore(){
+}
 
 
-
-
-def main()
-
+main(){
+backup
+}
 
 main
