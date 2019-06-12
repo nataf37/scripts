@@ -5,9 +5,9 @@
 
 PoolId=8a99f9a969d97b74016a3f9defe77d37
 
-backup(){
+backup_undercloud(){
 
-logit "Starting Back up process"
+logit "Starting Undercloud-0 Back up process"
 
 ssh undercloud-0 " 
 	yum -y install mariadb ;
@@ -28,11 +28,13 @@ ssh undercloud-0 "
 	    /root \
 	    /home/stack;
 	"
-logit "Backup process has been completed" 
+logit "Backup undercloud-0 process has been completed" 
 }
 
-restore(){
+restore_undercloud(){
 
+
+logit "Starting restore up process"
 ssh undercloud-0 "
 	subscription-manager register --serverurl=https://subscription.rhn.stage.redhat.com --username=qa-automation --password=qa-automation --auto-attach;
 	subscription-manager attach --pool=$PoolId;
@@ -41,7 +43,8 @@ ssh undercloud-0 "
 	yum update -y;
 	reboot;
 	"
-
+logit "Waiting 30 seconds for reboot to occur"
+sleep 30
 ssh undercloud-0 "
 	yum install -y ntp
 	systemctl start ntpd
@@ -65,7 +68,7 @@ ssh undercloud-0 "
 	mysql -e 'flush privileges'
 	useradd stack
 	passwd stack
-	echo "stack ALL=(root) NOPASSWD:ALL" | tee -a /etc/sudoers.d/stack
+	echo "stack ALL=\(root\) NOPASSWD:ALL" | tee -a /etc/sudoers.d/stack
 	chmod 0440 /etc/sudoers.d/stack
 	tar -xvC / -f undercloud-backup.tar home/stack
 	yum -y install policycoreutils-python
@@ -81,13 +84,12 @@ ssh undercloud-0 "
 	sudo yum install -y python-tripleoclient
 	openstack undercloud install
 	"
-
-
-
-
-
+logit "Restore is done"
 }
 
+replace_unedrcloud(){
+
+}
 
 logit(){
      echo $(date) $1
@@ -95,7 +97,10 @@ logit(){
 
 
 main(){
-    backup
+    backup_undercloud
+    replace_undercloud
+    restore_undercloud
+
 }
 
 main
