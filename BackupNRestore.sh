@@ -17,7 +17,7 @@ ssh undercloud-0 "
 	mysqldump --opt --all-databases > /root/undercloud-all-databases.sql;
 	cd /backup;
 	tar --xattrs --ignore-failed-read -vcf \
-	    undercloud-backup-`date +%F`.tar \
+	    undercloud-backup.tar \
 	    /etc \
 	    /var/log \
 	    /var/lib/glance \
@@ -41,6 +41,48 @@ ssh undercloud-0 "
 	yum update -y;
 	reboot;
 	"
+
+ssh undercloud-0 "
+	yum install -y ntp
+	systemctl start ntpd
+	systemctl enable ntpd
+	ntpdate pool.ntp.org
+	systemctl restart ntpd
+	yum install -y mariadb mariadb-server
+	systemctl start mariadb
+	mysql -uroot -e"set global max_allowed_packet = 1073741824;"
+	tar -xvC / -f undercloud-backup.tar etc/my.cnf.d/server.cnf
+	tar -xvC / -f undercloud-backup.tar root/undercloud-all-databases.sql
+	mysql -u root < /root/undercloud-all-databases.sql
+	tar -xvf undercloud-backup.tar root/.my.cnf
+	OLDPASSWORD=$(sudo cat root/.my.cnf | grep -m1 password | cut -d'=' -f2 | tr -d "'")
+	mysqladmin -u root password "$OLDPASSWORD"
+	rmdir root
+	mysql -e 'select host, user, password from mysql.user;'
+	HOST="192.0.2.1"
+	USERS=$(mysql -Nse "select user from mysql.user WHERE user != \"root\" and host = \"$HOST\";" | uniq | xargs)
+	for USER in $USERS ; do mysql -e "drop user \"$USER\"@\"$HOST\"" || true ;done
+	mysql -e 'flush privileges'
+	useradd stack
+	passwd stack
+	echo "stack ALL=(root) NOPASSWD:ALL" | tee -a /etc/sudoers.d/stack
+	chmod 0440 /etc/sudoers.d/stack
+	tar -xvC / -f undercloud-backup.tar home/stack
+	yum -y install policycoreutils-python
+	tar --xattrs -xvC / -f undercloud-backup-$TIMESTAMP.tar var/lib/glance
+	tar --xattrs -xvC / -f undercloud-backup-$TIMESTAMP.tar srv/node
+	tar -xvC / -f undercloud-backup-$TIMESTAMP.tar etc/pki/instack-certs/undercloud.pem
+	tar -xvC / -f undercloud-backup-$TIMESTAMP.tar etc/pki/ca-trust/source/anchors/*
+	restorecon -R /etc/pki
+	semanage fcontext -a -t etc_t "/etc/pki/instack-certs(/.*)?"
+	restorecon -R /etc/pki/instack-certs
+	update-ca-trust extract
+	su - stack
+	sudo yum install -y python-tripleoclient
+	openstack undercloud install
+	"
+
+
 
 
 
