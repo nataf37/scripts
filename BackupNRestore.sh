@@ -87,7 +87,25 @@ ssh undercloud-0 "
 logit "Restore is done"
 }
 
-replace_unedrcloud(){
+create_machine(){
+	
+	curl -o /tmp/rhel7-guest-official.qcow2 http://10.12.50.1/pub/rhel-7-x86_64-latest.qcow2
+	qemu-img create -f qcow2 /tmp/rhel7-guest.qcow2 120G
+	yum -y install libguestfs-xfs
+	virt-resize --expand /dev/sda1 /tmp/rhel7-guest-official.qcow2 /tmp/rhel7-guest.qcow2
+	qemu-img create -f qcow2 -b /tmp/rhel7-guest.qcow2 /var/lib/libvirt/images/undercloud.qcow2
+	virt-customize -a undercloud.qcow2 --root-password password:redhat --uninstall cloud-init
+
+
+
+}
+
+restore_unedrcloud(){
+
+
+	virsh shutdown undercloud-0
+	virsh snapshot-revert --domain undercloud-0 --snapshotname underlcoud-clean.xml 
+	virsh start undercloud-0
 
 }
 
@@ -98,7 +116,7 @@ logit(){
 
 main(){
     backup_undercloud
-    replace_undercloud
+    restore_undercloud
     restore_undercloud
 
 }
